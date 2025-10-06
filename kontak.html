@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak - SDL KNIVES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/theme.css" />
+    <link rel="stylesheet" href="assets/layout.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      
+      <div class="container mainbar">
+        <div class="brand"><img class="logo" src="foto/logo.jpg" alt="SDL KNIVES Logo" /><span class="name">SDL KNIVES</span></div>
+        <nav class="primary-nav simple">
+          <a href="index.html"><i class="bi bi-house-door"></i> Beranda</a>
+          <a href="catalog.html"><i class="bi bi-bag"></i> Katalog</a>
+          <a href="kontak.html" class="active"><i class="bi bi-chat-dots"></i> Kontak</a>
+        </nav>
+        
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="info-strip reveal" role="note" aria-label="Petunjuk kontak">
+        <div class="content">
+          <i class="bi bi-info-circle"></i>
+          <span>Butuh jawaban cepat? Klik WhatsApp. Untuk pertanyaan detail, isi formulir di bawah.</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/6281234567890" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp Admin</a>
+        </div>
+      </div>
+      <section class="card banner">
+        <div class="banner-inner">
+          <h1 class="accent-text accent-animated">Kontak SDL KNIVES</h1>
+          <p class="muted">Hubungi kami untuk pemesanan, konsultasi custom, atau pertanyaan umum.</p>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:16px;">
+        <div class="contact-grid">
+          <div>
+            <h2 class="section-title accent-text accent-animated"><i class="bi bi-telephone"></i> Informasi Kontak</h2>
+            <ul class="info-list">
+              <li class="info-item">
+                <span class="icon"><i class="bi bi-whatsapp"></i></span>
+                <div class="content">
+                  <div class="label">WhatsApp</div>
+                  <a href="https://wa.me/6281234567890" target="_blank">+62 812-3456-7890</a>
+                </div>
+              </li>
+              <li class="info-item">
+                <span class="icon"><i class="bi bi-envelope"></i></span>
+                <div class="content">
+                  <div class="label">Email</div>
+                  <a href="mailto:admin@sdlknives.com">admin@sdlknives.com</a>
+                </div>
+              </li>
+              <li class="info-item">
+                <span class="icon"><i class="bi bi-instagram"></i></span>
+                <div class="content">
+                  <div class="label">Instagram</div>
+                  <a href="https://instagram.com/sdlknives" target="_blank">@sdlknives</a>
+                </div>
+              </li>
+              <li class="info-item">
+                <span class="icon"><i class="bi bi-bag"></i></span>
+                <div class="content">
+                  <div class="label">Shopee</div>
+                  <a href="https://shopee.co.id/sdlknives" target="_blank">shopee.co.id/sdlknives</a>
+                </div>
+              </li>
+              <li class="info-item">
+                <span class="icon"><i class="bi bi-tiktok"></i></span>
+                <div class="content">
+                  <div class="label">TikTok Shop</div>
+                  <a href="https://www.tiktok.com/@sdlknives" target="_blank">@sdlknives</a>
+                </div>
+              </li>
+              <li class="info-item">
+                <span class="icon"><i class="bi bi-geo-alt"></i></span>
+                <div class="content">
+                  <div class="label">Lokasi</div>
+                  <span>Yogyakarta, Indonesia</span>
+                </div>
+              </li>
+            </ul>
+            <div class="contact-card muted">
+              <i class="bi bi-clock"></i>
+              <span>Respons cepat pada jam kerja (09.00–18.00 WIB).</span>
+            </div>
+            <div class="social-row">
+              <a class="social-btn" href="https://wa.me/6281234567890" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+              <a class="social-btn" href="https://instagram.com/sdlknives" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a class="social-btn" href="mailto:admin@sdlknives.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+              <a class="social-btn" href="https://shopee.co.id/sdlknives" target="_blank" aria-label="Shopee"><i class="bi bi-bag"></i></a>
+              <a class="social-btn" href="https://www.tiktok.com/@sdlknives" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            </div>
+          </div>
+          <div>
+            <h2 class="section-title accent-text accent-animated"><i class="bi bi-chat-dots"></i> Kirim Pesan</h2>
+            <form id="contactForm" novalidate>
+              <div class="form-row single">
+                <div>
+                  <label>Nama</label>
+                  <div class="input-wrap">
+                    <i class="bi bi-person"></i>
+                    <input id="cname" placeholder="Nama lengkap" required />
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div>
+                  <label>Email</label>
+                  <div class="input-wrap">
+                    <i class="bi bi-envelope"></i>
+                    <input id="cemail" type="email" placeholder="nama@contoh.com" required />
+                  </div>
+                </div>
+                <div>
+                  <label>Nomor WhatsApp</label>
+                  <div class="input-wrap">
+                    <i class="bi bi-whatsapp"></i>
+                    <input id="cwa" placeholder="628xxxxxxxxxx" inputmode="numeric" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-row single">
+                <div>
+                  <label>Pesan</label>
+                  <div class="input-wrap textarea">
+                    <i class="bi bi-chat-text"></i>
+                    <textarea id="cmsg" placeholder="Tuliskan pertanyaan atau kebutuhan Anda" required></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="form-feedback" id="formFeedback" aria-live="polite"></div>
+              <div class="actions">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Kirim</button>
+                <a id="waLink" class="btn" target="_blank"><i class="bi bi-whatsapp"></i> Kirim via WhatsApp</a>
+              </div>
+              <p class="muted" style="font-size:12px; margin-top:8px;">Data Anda kami gunakan untuk menanggapi pertanyaan. Tidak dibagikan ke pihak ketiga.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img class="footer-logo" src="foto/logo.jpg" alt="SDL KNIVES Logo" />
+          <h4 class="footer-title">SDL KNIVES</h4>
+          <p class="muted">Pisau premium: Bedog, Katana, dan Chef Series. Handmade dengan perhatian pada detail.</p>
+          <div class="social">
+            <a href="https://instagram.com/sdlknives" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://shopee.co.id/sdlknives" target="_blank" aria-label="Shopee"><i class="bi bi-bag"></i></a>
+            <a href="https://www.tiktok.com/@sdlknives" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+          <p class="muted" style="font-size:13px; margin-top:8px;">Alamat: Jl. Contoh No. 123, Bandung<br/>Jam: Senin–Sabtu 09:00–17:00</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Belanja</h4>
+          <a href="catalog.html">Katalog</a><br/>
+          <a href="catalog.html#bedog">Bedog</a><br/>
+          <a href="catalog.html#katana">Katana</a><br/>
+          <a href="catalog.html#dapur">Dapur</a><br/>
+          <a href="https://shopee.co.id/sdlknives" target="_blank">Shopee</a><br/>
+          <a href="https://www.tiktok.com/@sdlknives" target="_blank">TikTok Shop</a>
+        </div>
+        <div>
+          <h4 class="footer-title">Bantuan</h4>
+          <a href="kontak.html">Pengiriman</a><br/>
+          <a href="kontak.html">Garansi</a><br/>
+          <a href="kontak.html">Kontak</a>
+        </div>
+        <div>
+          <h4 class="footer-title">Metode Pembayaran</h4>
+          <div class="pay-row">
+            <span class="pill"><i class="bi bi-credit-card-2-front"></i> Kartu</span>
+            <span class="pill"><i class="bi bi-wallet2"></i> Transfer</span>
+            <span class="pill"><i class="bi bi-cash-coin"></i> COD</span>
+          </div>
+        </div>
+        <div>
+          
+        </div>
+      </div>
+      <div class="container footnote">
+        <span>© 2025 SDL KNIVES</span>
+        <span class="muted">Dibuat dengan ketelitian & rasa seni</span>
+      </div>
+    </footer>
+
+    <script src="assets/app.js"></script>
+    <script src="assets/layout.js"></script>
+    <script src="assets/contact.js"></script>
+    <a class="help-fab" href="https://wa.me/6281234567890" target="_blank" aria-label="Bantuan WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+      <span class="label">Butuh bantuan?</span>
+    </a>
+  </body>
+  </html>

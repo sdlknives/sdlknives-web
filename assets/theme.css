@@ -1,0 +1,101 @@
+/* Tema modern tambahan untuk SDL KNIVES */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Helvetica, Arial; line-height: 1.6; }
+
+.muted { color: var(--muted); }
+
+/* Palet aksen global untuk efek warna & gradient */
+:root {
+  --accent-a: #8a2be2; /* electric purple */
+  --accent-b: #2f81f7; /* royal blue */
+  --accent-c: #00d1ff; /* cyan glow */
+  /* Palet inti untuk konsistensi tema gelap */
+  --bg: #0f1215;
+  --card: #151a1f;
+  --text: #e6e9ed;
+  --muted: #9aa4ae;
+  --primary: #2f81f7;
+  --primary-700: #226ad1;
+  --border: #21262d;
+}
+
+/* Utilitas warna & efek */
+.text-gradient, .accent-text { background: linear-gradient(90deg, var(--accent-a), var(--accent-b)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.accent-animated { background-size: 200% auto; animation: gradientShift 8s ease-in-out infinite; }
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.glow-card { box-shadow: 0 12px 40px rgba(0,0,0,0.28); }
+.hover-lift { transition: transform .2s ease, box-shadow .2s ease; }
+.hover-lift:hover { transform: translateY(-2px); box-shadow: 0 16px 44px rgba(0,0,0,0.28); }
+
+/* Header modern */
+.site-header {
+  background: linear-gradient(180deg, rgba(15,18,21,0.85) 0%, rgba(15,18,21,0.65) 100%);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  transition: background .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+/* Header menyatu dengan foto hero/section di belakangnya */
+.site-header.over-hero {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  border-bottom: none;
+  background: linear-gradient(180deg, rgba(15,18,21,0.35) 0%, rgba(15,18,21,0.05) 100%);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* Saat scroll, header menjadi sticky dan solid */
+.site-header.over-hero.scrolled {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  border-bottom: 1px solid var(--border);
+  background: rgba(15,18,21,0.85);
+  backdrop-filter: saturate(160%) blur(6px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+}
+.brand { font-weight: 700; letter-spacing: 0.6px; }
+.nav { display: flex; gap: 14px; }
+.icon-btn {
+  background: transparent; border: 1px solid var(--border); color: var(--text);
+  padding: 8px 10px; border-radius: 10px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+}
+.icon-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+/* Hero dan card efek modern */
+.hero h1 { font-size: clamp(24px, 4vw, 36px); }
+.card { box-shadow: 0 10px 32px rgba(0,0,0,0.25); transition: transform .2s ease, box-shadow .2s ease; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0,0,0,0.28); }
+
+.product-card { transition: transform .2s ease, box-shadow .2s ease; }
+.product-card:hover { transform: translateY(-3px); box-shadow: 0 16px 44px rgba(0,0,0,0.28); }
+
+/* Tombol dengan ikon */
+.btn i { margin-right: 8px; font-size: 1.05em; }
+
+/* Nav responsif */
+@media (max-width: 840px) {
+  .header-inner { gap: 8px; }
+  .nav { display: none; flex-direction: column; background: var(--card); border: 1px solid var(--border); padding: 10px; border-radius: 12px; position: absolute; right: 4%; top: 56px; min-width: 200px; }
+  .nav.open { display: flex; }
+}
+
+/* Animasi muncul */
+.reveal { opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Tema terang opsional */
+.light {
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --text: #0f1215;
+  --muted: #4c5560;
+  --primary: #2f81f7;
+  --primary-700: #226ad1;
+  --border: #e6e9ee;
+}

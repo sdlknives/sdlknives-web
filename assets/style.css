@@ -1,0 +1,204 @@
+:root {
+  --bg: #0f1215;
+  --card: #151a1f;
+  --text: #e6e9ed;
+  --muted: #9aa4ae;
+  --primary: #2f81f7;
+  --primary-700: #226ad1;
+  --border: #21262d;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container { width: min(1100px, 92%); margin: 0 auto; }
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; backdrop-filter: blur(8px);
+  background: rgba(15, 18, 21, 0.8);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.brand { font-weight: 700; letter-spacing: 0.5px; }
+.nav a { color: var(--text); text-decoration: none; margin-left: 18px; }
+.nav a:hover { color: var(--primary); }
+
+.hero { padding: 40px 0; }
+.cta-row { display: flex; gap: 12px; margin-top: 18px; }
+
+.btn { display: inline-block; border: 1px solid var(--border); padding: 10px 16px; border-radius: 8px; color: var(--text); text-decoration: none; }
+.btn:hover { border-color: var(--primary); color: var(--primary); }
+.btn-primary { background: var(--primary); border-color: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-700); border-color: var(--primary-700); }
+
+.site-footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 16px 0; color: var(--muted); }
+
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.product-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 10px 26px rgba(0,0,0,0.16); }
+.product-card img { width: 100%; aspect-ratio: 3/2; object-fit: cover; border-bottom: 1px solid var(--border); }
+.product-card .body { padding: 12px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.product-card .name { font-weight: 700; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.product-card .price { color: var(--text); font-weight: 700; }
+.product-card .body p { color: var(--muted); margin: 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.product-card .actions { margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Price tag dengan indikator aksen */
+.price-tag { display: inline-flex; align-items: center; gap: 8px; }
+.price-tag .dot { width: 8px; height: 8px; border-radius: 999px; background: linear-gradient(45deg, var(--accent-1), var(--accent-2)); box-shadow: 0 0 0 3px rgba(255,255,255,0.06) inset; }
+
+/* Ribbon kategori di pojok kiri atas */
+.product-card .ribbon { position: absolute; top: 0; left: 0; padding: 6px 10px; font-size: 12px; color: #fff; background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); border-bottom-right-radius: 10px; }
+
+/* Polish katalog: hover halus untuk kartu produk */
+.product-card { transition: transform .18s ease, box-shadow .22s ease; }
+.product-card:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0,0,0,0.28); border-color: rgba(255,255,255,0.08); }
+.product-card .btn { transition: transform .15s ease; }
+.product-card .btn:hover { transform: translateY(-1px); }
+
+/* Grid kontak dan form elegan */
+.contact-grid { display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+.contact-grid .actions { margin-top: 8px; }
+
+/* Kontak: kartu info dengan ikon */
+.info-list { list-style: none; padding: 0; margin: 10px 0; display: grid; gap: 10px; }
+.info-item { display: flex; align-items: center; gap: 10px; padding: 10px; border: 1px solid var(--border); border-radius: 12px; background: #0c1014; transition: transform .18s ease, box-shadow .22s ease; }
+.info-item:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(0,0,0,0.28); }
+.info-item .icon { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); color: #fff; box-shadow: 0 6px 18px rgba(0,0,0,.28); }
+.info-item .content .label { color: var(--muted); font-size: 12px; }
+
+.contact-card { display:flex; align-items:center; gap:8px; border:1px solid var(--border); border-radius:12px; background:#0c1014; padding:10px 12px; margin-top:12px; }
+.contact-card i { color: var(--accent-2); }
+
+/* Input dengan ikon */
+.input-wrap { position: relative; }
+.input-wrap i { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--muted); }
+.input-wrap.textarea i { top: 14px; transform: none; }
+.input-wrap input, .input-wrap textarea { padding-left: 34px; }
+.form-feedback { margin-top: 8px; font-size: 13px; }
+.form-feedback.error { color: #ef4444; }
+.form-feedback.success { color: #22c55e; }
+.input-wrap input.invalid, .input-wrap textarea.invalid { border-color: #ef4444; }
+
+/* Kontak: tombol sosial bundar */
+.social-row { display:flex; gap:10px; margin-top:12px; }
+.social-btn { width: 36px; height: 36px; border-radius: 50%; display:flex; align-items:center; justify-content:center; border:1px solid var(--border); background: var(--card); color: var(--text); transition: transform .18s ease, box-shadow .22s ease, filter .2s; }
+.social-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(0,0,0,.28); filter: brightness(1.1); }
+
+/* Brand styling untuk Shopee & TikTok */
+.social-btn[aria-label="Shopee"], .social a[aria-label="Shopee"] { background: #ee4d2d; color: #fff; border-color: rgba(238,77,45,.25); }
+.social-btn[aria-label="Shopee"] i, .social a[aria-label="Shopee"] i { color: #fff; }
+.social-btn[aria-label="Shopee"]:hover, .social a[aria-label="Shopee"]:hover { filter: brightness(1.05); box-shadow: 0 12px 28px rgba(238,77,45,.35); }
+
+.social-btn[aria-label="TikTok"], .social a[aria-label="TikTok"] {
+  background: linear-gradient(135deg, #000 0%, #111 60%, #000 100%);
+  color: #fff; border-color: rgba(0,0,0,.35);
+}
+.social-btn[aria-label="TikTok"] i, .social a[aria-label="TikTok"] i { color: #fff; text-shadow: 0 0 6px rgba(0,209,255,.6); }
+.social-btn[aria-label="TikTok"]:hover, .social a[aria-label="TikTok"]:hover { box-shadow: 0 12px 28px rgba(0,0,0,.35); filter: brightness(1.06); }
+
+/* Animasi shake untuk field invalid */
+@keyframes shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-2px); } 40% { transform: translateX(2px); } 60% { transform: translateX(-2px); } 80% { transform: translateX(2px); } }
+.shake { animation: shake .6s ease; }
+
+/* Animated card sway (dipakai di halaman kontak) */
+.animated-card { will-change: transform; animation: cardSway 11s ease-in-out infinite; animation-direction: alternate; animation-delay: calc(var(--i, 0) * 0.2s); }
+@keyframes cardSway { 0% { transform: translateY(0) translateX(0); } 25% { transform: translateY(-2px) translateX(2px); } 50% { transform: translateY(-4px) translateX(0); } 75% { transform: translateY(-2px) translateX(-2px); } 100% { transform: translateY(0) translateX(0); } }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-row.single { grid-template-columns: 1fr; }
+label { display: block; margin-bottom: 6px; color: var(--muted); }
+input, textarea, select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: #0b0e11; color: var(--text); }
+textarea { min-height: 100px; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { border-bottom: 1px solid var(--border); padding: 10px; text-align: left; }
+th { color: var(--muted); font-weight: 600; }
+.actions { display: flex; gap: 8px; }
+
+.pill { display: inline-block; padding: 4px 8px; border-radius: 999px; font-size: 12px; }
+.pill.green { background: #193a25; color: #6bd680; border: 1px solid #225b37; }
+.pill.gray { background: #1c1f23; color: #b7bfc8; border: 1px solid var(--border); }
+
+@media (max-width: 720px) {
+  .form-row { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* Katalog: toolbar & pager */
+.toolbar { display:flex; align-items:center; gap:10px; margin-top:12px; }
+.toolbar select { padding:8px 10px; border:1px solid var(--border); border-radius:10px; background: var(--card); color: var(--text); }
+.pager { display:flex; align-items:center; justify-content:center; gap:12px; margin:24px 0; }
+.pager .btn[disabled] { opacity:.6; cursor:not-allowed; }
+
+/* Katalog: badge stok */
+.product-card { position: relative; }
+.stock-badge { position:absolute; top:8px; right:8px; background:#22c55e; color:#fff; font-size:12px; padding:4px 8px; border-radius:999px; box-shadow: 0 4px 12px rgba(34,197,94,.3); }
+
+/* Profil: timeline & gallery */
+.timeline { position:relative; margin: 16px 0; padding-left: 26px; }
+.timeline::before { content:""; position:absolute; left:10px; top:0; bottom:0; width:2px; background: var(--border); }
+.tl-item { position:relative; margin-bottom: 14px; }
+.tl-item .dot { position:absolute; left:6px; top:6px; width:10px; height:10px; background: var(--primary); border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,.15); }
+.tl-item .content { background: var(--card); border:1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
+.tl-item .content { box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+.gallery-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.gallery-item { aspect-ratio: 4/3; border-radius: 12px; background: linear-gradient(135deg, rgba(99,102,241,.15), rgba(16,185,129,.15)); border:1px solid var(--border); position:relative; overflow:hidden; box-shadow: 0 8px 20px rgba(0,0,0,.06); }
+.gallery-item .caption { position:absolute; bottom:8px; left:10px; font-size:12px; color:#1f2937; }
+.gallery-item:hover { transform: translateY(-2px); transition: transform .2s ease; }
+
+/* Elegant UI refresh */
+.reveal { opacity: 0; transform: translateY(8px); transition: opacity .35s ease, transform .35s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* Buttons & cards polish */
+.btn { border-radius: 12px; padding: 10px 18px; transition: transform .15s ease, box-shadow .25s ease, background .25s ease; }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(0,0,0,0.25); }
+.btn-primary { background: linear-gradient(180deg, var(--primary), #2b76e3); box-shadow: 0 8px 22px rgba(47,129,247,0.35); }
+.btn-primary:hover { background: linear-gradient(180deg, var(--primary-700), #1f59b9); }
+
+.card { border-radius: 16px; box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
+.card.banner { background: linear-gradient(180deg, rgba(47,129,247,.08), rgba(16,185,129,.06)); }
+
+/* Homepage feature & category cards */
+.feature-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px; }
+.feature-card { display:flex; gap:12px; align-items:flex-start; padding:14px; border:1px solid var(--border); border-radius:14px; background: var(--card); box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+.feature-card i { font-size:22px; color: var(--primary); }
+.feature-card .title { font-weight: 600; }
+.feature-card .desc { color: var(--muted); }
+
+.advantages-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px; }
+.adv-card { display:flex; gap:10px; padding:12px; border:1px solid var(--border); border-radius:14px; background: var(--card); }
+.adv-card i { color: var(--primary); }
+.adv-card .title { font-weight: 600; }
+.adv-card .desc { color: var(--muted); }
+
+.category-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px; }
+.category-card { border:1px solid var(--border); border-radius:14px; padding:14px; background: var(--card); box-shadow: 0 8px 22px rgba(0,0,0,.16); text-align:center; position:relative; }
+.category-card .badge { position:absolute; top:10px; left:10px; font-size:12px; background: linear-gradient(90deg, var(--accent-a), var(--accent-b)); color:#fff; border:1px solid rgba(255,255,255,0.1); border-radius:999px; padding:4px 8px; box-shadow: 0 6px 16px rgba(0,0,0,.18); }
+.category-card i { font-size:28px; color: var(--primary); }
+.category-card .name { font-weight:700; margin-top:6px; }
+.category-card .desc { color: var(--muted); font-size: 14px; }
+
+/* Catalog chips & toolbar refinement */
+.chips { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+.chip { border:1px solid var(--border); background: var(--card); color: var(--text); border-radius:999px; padding:8px 12px; cursor:pointer; transition: all .2s ease; }
+.chip:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,.18); }
+.chip.active { background: var(--primary); color:#fff; border-color: var(--primary); }
+.toolbar label { color: var(--muted); }
+.pager { gap: 16px; }
+
+/* Aksesibilitas: ring fokus yang jelas */
+:focus-visible { outline: 2px solid #66aaff; outline-offset: 2px; }
+.btn:focus-visible, .icon-btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  box-shadow: 0 0 0 3px rgba(102,170,255,.35);
+}

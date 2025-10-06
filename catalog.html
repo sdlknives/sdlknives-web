@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Katalog Produk - SDL KNIVES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/theme.css" />
+    <link rel="stylesheet" href="assets/layout.css" />
+    <link rel="stylesheet" href="assets/sell.css" />
+    <link rel="preload" as="image" href="foto/logo.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="foto/bg1 (1).jpg" fetchpriority="high" />
+  </head>
+  <body class="catalog-katana">
+    <a href="#catalog" class="skip-link">Lewati ke konten</a>
+    <header class="site-header over-hero">
+      
+      <div class="container mainbar">
+        <div class="brand"><img class="logo" src="foto/logo.jpg" alt="SDL KNIVES Logo" /><span class="name">SDL KNIVES</span></div>
+        <nav class="primary-nav simple">
+          <a href="index.html"><i class="bi bi-house-door"></i> Beranda</a>
+          <a href="catalog.html" class="active"><i class="bi bi-bag"></i> Katalog</a>
+          <a href="kontak.html"><i class="bi bi-chat-dots"></i> Kontak</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card banner full-bleed reveal" style="background-image: url('foto/bg1 (1).jpg'); background-size: cover; background-position: center;">
+        <div class="banner-inner">
+          <h1>Samurai Katana Collection</h1>
+          <p class="muted">Desain modern, performa tajam — pilih kategori favorit.</p>
+          <div class="chips" id="chips">
+            <button class="chip active" data-filter="all"><i class="bi bi-stars"></i> Semua</button>
+            <button class="chip" data-filter="bedog">Bedog</button>
+            <button class="chip" data-filter="katana">Katana</button>
+            <button class="chip" data-filter="katana">Samurai</button>
+            <button class="chip" data-filter="damascus">Damascus</button>
+            <button class="chip" data-filter="dapur">Dapur</button>
+            <button class="chip" data-filter="edc">EDC</button>
+            <button class="chip" data-filter="alat">Alat & Aksesori</button>
+          </div>
+          <div class="toolbar" id="toolbar">
+            <div class="search"><i class="bi bi-search"></i><input id="searchInput" placeholder="Cari produk…" /></div>
+            <label for="sortSelect"><i class="bi bi-arrow-up-down"></i> Urutkan</label>
+            <select id="sortSelect">
+              <option value="asc">Harga Terendah</option>
+              <option value="desc">Harga Tertinggi</option>
+              <option value="newest">Terbaru</option>
+            </select>
+          </div>
+          <div id="categoryHero" class="category-hero" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="catalog" class="grid reveal" aria-live="polite" role="region" aria-label="Daftar produk"></section>
+      <div id="pager" class="pager reveal">
+        <button id="prevPage" class="btn" aria-label="Halaman sebelumnya">Sebelumnya</button>
+        <span id="pageInfo" class="muted" aria-live="polite">Halaman 1/1</span>
+        <button id="nextPage" class="btn" aria-label="Halaman berikutnya">Berikutnya</button>
+        <button id="loadMore" class="btn btn-primary" aria-label="Muat lebih">Muat lebih</button>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img class="footer-logo" src="foto/logo.jpg" alt="SDL KNIVES Logo" />
+          <h4 class="footer-title">SDL KNIVES</h4>
+          <p class="muted">Pisau premium: Bedog, Katana, dan Chef Series. Handmade dengan perhatian pada detail.</p>
+          <div class="social">
+            <a href="https://instagram.com/sdlknives" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://shopee.co.id/sdlknives" target="_blank" aria-label="Shopee"><i class="bi bi-bag"></i></a>
+            <a href="https://www.tiktok.com/@sdlknives" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+          <p class="muted" style="font-size:13px; margin-top:8px;">Alamat: Jl. Contoh No. 123, Bandung<br/>Jam: Senin–Sabtu 09:00–17:00</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Belanja</h4>
+          <a href="catalog.html">Katalog</a><br/>
+          <a href="catalog.html#bedog">Bedog</a><br/>
+          <a href="catalog.html#katana">Katana</a><br/>
+          <a href="catalog.html#dapur">Dapur</a><br/>
+          <a href="https://shopee.co.id/sdlknives" target="_blank">Shopee</a><br/>
+          <a href="https://www.tiktok.com/@sdlknives" target="_blank">TikTok Shop</a>
+        </div>
+        <div>
+          <h4 class="footer-title">Bantuan</h4>
+          <a href="kontak.html">Pengiriman</a><br/>
+          <a href="kontak.html">Garansi</a><br/>
+          <a href="kontak.html">Kontak</a>
+        </div>
+        <div>
+          <h4 class="footer-title">Metode Pembayaran</h4>
+          <div class="pay-row">
+            <span class="pill"><i class="bi bi-credit-card-2-front"></i> Kartu</span>
+            <span class="pill"><i class="bi bi-wallet2"></i> Transfer</span>
+            <span class="pill"><i class="bi bi-cash-coin"></i> COD</span>
+          </div>
+        </div>
+        
+      </div>
+      <div class="container footnote">
+        <span>© 2025 SDL KNIVES</span>
+        <span class="muted">Dibuat dengan ketelitian & rasa seni</span>
+        <span><a href="admin.html" class="muted" aria-label="Masuk Admin">Admin</a></span>
+      </div>
+    </footer>
+
+    <script>
+      const WHATSAPP_NUMBER = '6281234567890'; // ganti dengan nomor admin
+
+      const rupiah = (n) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(n);
+
+      const buildWA = (p) => {
+        const message = `Halo Admin SDL KNIVES,%0A%0A` +
+          `Saya ingin beli:%0A` +
+          `Nama: ${encodeURIComponent(p.name)}%0A` +
+          `Harga: ${encodeURIComponent(rupiah(p.price))}%0A` +
+          `Gambar: ${encodeURIComponent(p.imageUrl)}%0A` +
+          `Link Produk: ${encodeURIComponent(window.location.href)}`;
+        return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+      };
+
+      async function loadProducts() {
+        const el = document.getElementById('catalog');
+        el.setAttribute('aria-busy', 'true');
+        el.innerHTML = '<div class="card" role="status" aria-live="polite">Memuat data produk…</div>';
+        try {
+          const res = await fetch('api/products.php?action=list');
+          const data = await res.json();
+          const products = (data.products || []).filter(p => p.visible !== false);
+          if (!products.length) {
+            el.innerHTML = '<div class="card" role="status" aria-live="polite">Belum ada produk ditampilkan.</div>';
+            return;
+          }
+          el.innerHTML = products.map(p => `
+            <article class="product-card">
+              <img src="${p.imageUrl}" alt="${p.name}" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="body">
+                <div class="name">${p.name}</div>
+                <div class="price">${rupiah(p.price)}</div>
+                <p>${p.description || ''}</p>
+                <a class="btn btn-primary" target="_blank" href="${buildWA(p)}"><i class="bi bi-whatsapp"></i> Beli via WhatsApp</a>
+              </div>
+            </article>
+          `).join('');
+          el.removeAttribute('aria-busy');
+        } catch (e) {
+          el.innerHTML = `<div class="card" role="alert">Gagal memuat data: ${e.message}</div>`;
+        }
+      }
+
+      // ==== Enhancements: kategorisasi, skeleton, dan filter chips ====
+      function inferCategory(name = '') {
+        const s = name.toLowerCase();
+        if (s.includes('katana') || s.includes('samurai')) return 'katana';
+        if (s.includes('bedog') || s.includes('golok')) return 'bedog';
+        if (s.includes('damascus')) return 'damascus';
+        if (s.includes('alat') || s.includes('aksesori') || s.includes('sarung') || s.includes('sheath') || s.includes('batu asah') || s.includes('whetstone')) return 'alat';
+        if (s.includes('chef') || s.includes('dapur')) return 'dapur';
+        if (s.includes('lipat') || s.includes('edc')) return 'edc';
+        return 'umum';
+      }
+
+      function categoryLabel(cat) {
+        return ({ katana: 'Katana', bedog: 'Bedog', damascus: 'Damascus', dapur: 'Dapur', edc: 'EDC', alat: 'Alat & Aksesori', umum: 'Umum' })[cat] || 'Umum';
+      }
+
+      const MICRO_COPY = {
+        katana: 'Bilahan panjang bergaya samurai untuk koleksi dan display elegan.',
+        bedog: 'Pisau tradisional serbaguna untuk kerja berat dan aktivitas outdoor.',
+        damascus: 'Eksotis dengan pola lipatan baja, performa sekaligus estetika.',
+        dapur: 'Chef knife dan utilitas dapur untuk presisi memasak harian.',
+        edc: 'Pisau lipat praktis untuk penggunaan harian (Everyday Carry).',
+        alat: 'Sarung, perawatan, batu asah dan aksesori pendukung lainnya.'
+      };
+
+      // Tema aksen per kategori untuk nuansa premium
+      const ACCENTS = {
+        all: ['#8a2be2','#2f81f7','#00d1ff'],
+        katana: ['#ef4444','#b45309','#f59e0b'],
+        bedog: ['#16a34a','#22c55e','#10b981'],
+        damascus: ['#3b82f6','#06b6d4','#00d1ff'],
+        dapur: ['#fb7185','#f97316','#f59e0b'],
+        edc: ['#8b5cf6','#a78bfa','#c084fc'],
+        alat: ['#475569','#64748b','#94a3b8']
+      };
+
+      function applyTheme(cat = 'all') {
+        const [a1, a2, a3] = ACCENTS[cat] || ACCENTS.all;
+        const root = document.documentElement;
+        root.style.setProperty('--accent-1', a1);
+        root.style.setProperty('--accent-2', a2);
+        root.style.setProperty('--accent-3', a3);
+      }
+
+      function updateBanner(cat = 'all') {
+        const titleEl = document.querySelector('.banner h1');
+        const heroEl = document.getElementById('categoryHero');
+        const iconMap = { katana: 'bi-lightning-charge', bedog: 'bi-fire', damascus: 'bi-gem', dapur: 'bi-basket', edc: 'bi-gear', alat: 'bi-tools', all: 'bi-stars' };
+        const label = cat === 'all' ? 'Bedog & Katana Collection' : `${categoryLabel(cat)} Collection`;
+        if (titleEl) {
+          titleEl.classList.remove('swap');
+          void titleEl.offsetWidth; // restart animation
+          titleEl.textContent = label;
+          titleEl.classList.add('swap');
+        }
+        if (heroEl) {
+          heroEl.classList.remove('swap');
+          void heroEl.offsetWidth;
+          heroEl.innerHTML = `<i class="bi ${iconMap[cat] || 'bi-stars'}"></i><span>${MICRO_COPY[cat] || 'Telusuri koleksi premium kami.'}</span>`;
+          heroEl.classList.add('swap');
+        }
+      }
+
+      let PRODUCTS = [];
+      let PAGE = 1;
+      const PAGE_SIZE = 6;
+      let SORT = 'asc';
+
+      function renderCatalog(list) {
+        const el = document.getElementById('catalog');
+        if (!list.length) { el.innerHTML = '<div class="card" role="status" aria-live="polite">Belum ada produk ditampilkan.</div>'; return; }
+        el.innerHTML = list.map((p, i) => `
+          <article class="product-card on-scroll reveal" data-id="${p.id}" data-index="${i}">
+            <div class="ribbon">${categoryLabel(p.category)}</div>
+            <span class="stock-badge">Ready</span>
+            <img loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw" src="${p.imageUrl}" alt="${p.name}" />
+            <div class="body">
+              <h3 class="name">${p.name}</h3>
+              <div class="price price-tag"><span class="dot"></span>${rupiah(p.price)}</div>
+              <p>${p.description || ''}</p>
+              <div class="actions" style="display:flex; gap:8px; flex-wrap:wrap;">
+                <a class="btn detail-btn" href="product.html?id=${p.id}" data-id="${p.id}"><i class="bi bi-eye"></i> Detail</a>
+                <a class="btn btn-primary" target="_blank" href="${buildWA(p)}"><i class="bi bi-whatsapp"></i> Beli via WhatsApp</a>
+              </div>
+            </div>
+          </article>
+        `).join('');
+        setupDetailEvents();
+      }
+
+      function appendCatalog(list) {
+        const el = document.getElementById('catalog');
+        if (!list.length) return;
+        const html = list.map((p, i) => `
+          <article class="product-card on-scroll reveal" data-id="${p.id}" data-index="${i}">
+            <div class="ribbon">${categoryLabel(p.category)}</div>
+            <span class="stock-badge">Ready</span>
+            <img loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw" src="${p.imageUrl}" alt="${p.name}" />
+            <div class="body">
+              <h3 class="name">${p.name}</h3>
+              <div class="price price-tag"><span class="dot"></span>${rupiah(p.price)}</div>
+              <p>${p.description || ''}</p>
+              <div class="actions" style="display:flex; gap:8px; flex-wrap:wrap;">
+                <a class="btn detail-btn" href="product.html?id=${p.id}" data-id="${p.id}"><i class="bi bi-eye"></i> Detail</a>
+                <a class="btn btn-primary" target="_blank" href="${buildWA(p)}"><i class="bi bi-whatsapp"></i> Beli via WhatsApp</a>
+              </div>
+            </div>
+          </article>
+        `).join('');
+        el.insertAdjacentHTML('beforeend', html);
+        setupDetailEvents();
+      }
+
+      function renderBySections(listAll) {
+        const el = document.getElementById('catalog');
+        const order = ['katana', 'bedog', 'damascus', 'dapur', 'edc', 'alat'];
+        const sections = order.map(cat => {
+          const items = listAll.filter(p => p.category === cat);
+          if (!items.length) return '';
+          const heading = `<h2 id="${cat}" class="section-title">${categoryLabel(cat)} <a class="link" href="#${cat}">Lihat semua</a></h2>`;
+          const copy = MICRO_COPY[cat] ? `<p class="muted" style="margin:-6px 0 10px 0;">${MICRO_COPY[cat]}</p>` : '';
+          const grid = `<section class="grid">
+            ${items.map((p, i) => `
+              <article class="product-card on-scroll reveal" data-id="${p.id}" data-index="${i}">
+                <div class="ribbon">${categoryLabel(p.category)}</div>
+                <span class="stock-badge">Ready</span>
+                <img loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw" src="${p.imageUrl}" alt="${p.name}" />
+                <div class="body">
+                  <h3 class="name">${p.name}</h3>
+                  <div class="price price-tag"><span class="dot"></span>${rupiah(p.price)}</div>
+                  <p>${p.description || ''}</p>
+                  <div class="actions" style="display:flex; gap:8px; flex-wrap:wrap;">
+                    <a class="btn detail-btn" href="product.html?id=${p.id}" data-id="${p.id}"><i class="bi bi-eye"></i> Detail</a>
+                    <a class="btn btn-primary" target="_blank" href="${buildWA(p)}"><i class="bi bi-whatsapp"></i> Beli via WhatsApp</a>
+                  </div>
+                </div>
+              </article>
+            `).join('')}
+          </section>`;
+          return `${heading}${copy}${grid}`;
+        }).filter(Boolean).join('\n');
+        el.innerHTML = sections || '<div class="card" role="status" aria-live="polite">Belum ada produk ditampilkan.</div>';
+        setupDetailEvents();
+      }
+
+      function sortList(list) {
+        if (SORT === 'newest') {
+          const getNum = (id) => parseInt(String(id).replace(/\D/g, '') || '0', 10);
+          return [...list].sort((a, b) => getNum(b.id) - getNum(a.id));
+        }
+        return [...list].sort((a, b) => SORT === 'asc' ? (a.price - b.price) : (b.price - a.price));
+      }
+
+      function updatePager(total) {
+        const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+        PAGE = Math.min(Math.max(1, PAGE), totalPages);
+        const pageInfo = document.getElementById('pageInfo');
+        const prev = document.getElementById('prevPage');
+        const next = document.getElementById('nextPage');
+        if (pageInfo) pageInfo.textContent = `Halaman ${PAGE}/${totalPages}`;
+        if (prev) { prev.disabled = PAGE <= 1; prev.setAttribute('aria-disabled', prev.disabled ? 'true' : 'false'); }
+        if (next) { next.disabled = PAGE >= totalPages; next.setAttribute('aria-disabled', next.disabled ? 'true' : 'false'); }
+      }
+
+      function setupChips() {
+        const chips = document.querySelectorAll('#chips .chip');
+        const chipsWrap = document.getElementById('chips');
+        chipsWrap?.setAttribute('role', 'toolbar');
+        const params = new URLSearchParams(location.search);
+        const query = (params.get('q') || '').toLowerCase();
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput && params.get('q')) searchInput.value = params.get('q');
+
+        let currentCat = 'all';
+        const applyFilters = (cat, q) => {
+          currentCat = cat || 'all';
+          PAGE = 1;
+          let list = PRODUCTS;
+          if (cat && cat !== 'all') list = list.filter(p => p.category === cat);
+          if (q) list = list.filter(p => (`${p.name} ${(p.description||'')}`).toLowerCase().includes(q));
+          list = sortList(list);
+          applyTheme(currentCat);
+          updateBanner(currentCat);
+          const pagerEl = document.getElementById('pager');
+          if (currentCat === 'all') {
+            pagerEl?.classList.add('hidden');
+            renderBySections(list);
+          } else {
+            pagerEl?.classList.remove('hidden');
+            updatePager(list.length);
+            const start = 0;
+            const end = PAGE_SIZE;
+            renderCatalog(list.slice(start, end));
+            const prev = document.getElementById('prevPage');
+            const next = document.getElementById('nextPage');
+            const loadMore = document.getElementById('loadMore');
+            if (prev) prev.style.display = 'none';
+            if (next) next.style.display = 'none';
+            if (loadMore) {
+              loadMore.style.display = 'inline-block';
+              loadMore.disabled = end >= list.length;
+              loadMore.setAttribute('aria-disabled', loadMore.disabled ? 'true' : 'false');
+            }
+          }
+        };
+
+        chips.forEach(ch => {
+          ch.setAttribute('aria-pressed', ch.classList.contains('active') ? 'true' : 'false');
+          ch.addEventListener('click', () => {
+            chips.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-pressed','false'); });
+            ch.classList.add('active');
+            ch.setAttribute('aria-pressed','true');
+            const key = ch.dataset.filter;
+            applyFilters(key, query);
+          });
+          ch.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ch.click(); }
+          });
+        });
+
+        // Inisialisasi berdasar hash (#katana/#bedog/...) dan query ?q=
+        const initialCat = (location.hash || '').replace('#', '') || 'all';
+        chips.forEach(c => { if (c.dataset.filter === initialCat) { c.classList.add('active'); c.setAttribute('aria-pressed','true'); } else { c.setAttribute('aria-pressed','false'); } });
+        applyFilters(initialCat, query);
+
+        // Re-apply saat hash berubah (klik "Lihat semua" / navigasi anchor)
+        window.addEventListener('hashchange', () => {
+          const newCat = (location.hash || '').replace('#', '') || 'all';
+          chips.forEach(c => { const active = c.dataset.filter === newCat; c.classList.toggle('active', active); c.setAttribute('aria-pressed', active ? 'true' : 'false'); });
+          PAGE = 1;
+          applyFilters(newCat, query);
+        });
+
+        const sortSelect = document.getElementById('sortSelect');
+        if (sortSelect) {
+          sortSelect.addEventListener('change', (e) => {
+            SORT = e.target.value;
+            PAGE = 1;
+            applyFilters(currentCat, query);
+          });
+        }
+
+        const prev = document.getElementById('prevPage');
+        const next = document.getElementById('nextPage');
+        prev?.addEventListener('click', () => { PAGE = Math.max(1, PAGE - 1); applyFilters(currentCat, query); });
+        next?.addEventListener('click', () => { PAGE = PAGE + 1; applyFilters(currentCat, query); });
+
+        const loadMore = document.getElementById('loadMore');
+        if (loadMore && !loadMore.dataset.bound) {
+          loadMore.dataset.bound = '1';
+          loadMore.addEventListener('click', () => {
+            let list = PRODUCTS;
+            if (currentCat && currentCat !== 'all') list = list.filter(p => p.category === currentCat);
+            if (query) list = list.filter(p => (`${p.name} ${(p.description||'')}`).toLowerCase().includes(query));
+            list = sortList(list);
+            PAGE = PAGE + 1;
+            const start = (PAGE - 1) * PAGE_SIZE;
+            const end = start + PAGE_SIZE;
+            appendCatalog(list.slice(start, end));
+            updatePager(list.length);
+            const pageInfo = document.getElementById('pageInfo');
+            if (pageInfo) pageInfo.textContent = `Halaman ${PAGE}/${Math.max(1, Math.ceil(list.length / PAGE_SIZE))}`;
+            if (end >= list.length) { loadMore.disabled = true; loadMore.setAttribute('aria-disabled', 'true'); loadMore.textContent = 'Sudah semua'; }
+          });
+        }
+      }
+
+      // Override loadProducts agar memuat skeleton dan kategori
+      loadProducts = async function () {
+        const el = document.getElementById('catalog');
+        el.innerHTML = Array.from({length: 6}).map(() => `
+          <article class="product-card skeleton">
+            <div class="img"></div>
+            <div class="body">
+              <div class="line w-50"></div>
+            </div>
+          </article>
+        `).join('');
+        try {
+          const res = await fetch('api/products.php?action=list');
+          const data = await res.json();
+          PRODUCTS = (data.products || [])
+            .filter(p => p.visible !== false)
+            .map(p => ({ ...p, category: inferCategory(p.name) }));
+          setupChips();
+        } catch (e) {
+          el.innerHTML = `<div class=\"card\">Gagal memuat data: ${e.message}</div>`;
+        }
+      };
+
+      loadProducts();
+      window.addEventListener('load', () => { document.querySelector('#catalog')?.classList.add('visible'); });
+
+      // ==== Modal detail produk: mendukung banyak foto ==== 
+      function setupDetailEvents() {
+        const modal = document.getElementById('productModal');
+        const closeEls = modal?.querySelectorAll('[data-close]');
+        const openHandlers = (e) => {
+          const btn = e.target.closest('.detail-btn') || e.target.closest('.product-card');
+          if (!btn) return;
+          const id = btn.dataset.id || btn.getAttribute('data-id');
+          if (!id) return;
+          const p = (PRODUCTS || []).find(x => x.id === id);
+          if (!p) return;
+          openProductModal(p);
+        };
+        // Hapus intercept pada tombol Detail: biarkan navigasi ke product.html
+        // document.querySelectorAll('.detail-btn').forEach(... )
+        // Klik kartu juga membuka detail
+        document.querySelectorAll('.product-card').forEach(c => c.addEventListener('click', (e) => {
+          if (e.target.closest('.btn')) return; // jika klik tombol WA, abaikan
+          openHandlers(e);
+        }));
+        // Tutup
+        closeEls?.forEach(el => el.addEventListener('click', closeProductModal));
+        modal?.addEventListener('click', (e) => { if (e.target.dataset.close) closeProductModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeProductModal(); });
+      }
+
+      function openProductModal(p) {
+        const modal = document.getElementById('productModal');
+        if (!modal) return;
+        const imgs = Array.isArray(p.images) && p.images.length ? p.images : [p.imageUrl];
+        const main = modal.querySelector('.gallery .main');
+        const thumbs = modal.querySelector('.gallery .thumbs');
+        const nameEl = modal.querySelector('.details .name');
+        const priceEl = modal.querySelector('.details .price');
+        const descEl = modal.querySelector('.details .desc');
+        const waEl = modal.querySelector('.details .wa');
+        if (main) { main.src = imgs[0]; main.alt = p.name; }
+        if (thumbs) {
+          thumbs.innerHTML = imgs.map((src, i) => `<img src="${src}" alt="${p.name} ${i+1}" data-src="${src}" />`).join('');
+          thumbs.querySelectorAll('img').forEach(t => t.addEventListener('click', () => { if (main) main.src = t.dataset.src; }));
+        }
+        if (nameEl) nameEl.textContent = p.name;
+        if (priceEl) priceEl.textContent = rupiah(p.price);
+        if (descEl) descEl.textContent = p.description || '';
+        if (waEl) waEl.href = buildWA(p);
+        modal.classList.remove('hidden');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeProductModal() {
+        const modal = document.getElementById('productModal');
+        if (!modal) return;
+        modal.classList.add('hidden');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    </script>
+    <script>
+      // Animasi klik lembut untuk semua tombol (.btn)
+      (function(){
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) return;
+        document.addEventListener('click', function(e){
+          const btn = e.target.closest('.btn');
+          if (!btn) return;
+          btn.classList.add('btn-pop');
+          btn.addEventListener('animationend', function(){ btn.classList.remove('btn-pop'); }, { once: true });
+        });
+      })();
+    </script>
+    <script src="assets/app.js"></script>
+    <script src="assets/layout.js"></script>
+    <script src="assets/sell.js"></script>
+    <a class="help-fab" href="https://wa.me/6281234567890" target="_blank" aria-label="Bantuan WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+      <span class="label">Butuh bantuan?</span>
+    </a>
+  </body>
+  </html>
