@@ -522,15 +522,8 @@
 
         // Re-apply saat hash berubah (klik "Lihat semua" / navigasi anchor)
         window.addEventListener('hashchange', () => {
-          // Saat hash bukan kategori valid (mis. #catalog), fallback ke 'all'
-          const raw = (location.hash || '').replace('#', '') || 'all';
-          const valid = [...chips].map(c => c.dataset.filter);
-          const newCat = valid.includes(raw) ? raw : 'all';
-          chips.forEach(c => {
-            const active = c.dataset.filter === newCat;
-            c.classList.toggle('active', active);
-            c.setAttribute('aria-pressed', active ? 'true' : 'false');
-          });
+          const newCat = (location.hash || '').replace('#', '') || 'all';
+          chips.forEach(c => { const active = c.dataset.filter === newCat; c.classList.toggle('active', active); c.setAttribute('aria-pressed', active ? 'true' : 'false'); });
           PAGE = 1;
           applyFilters(newCat, query);
         });
