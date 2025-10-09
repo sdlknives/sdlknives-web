@@ -5,6 +5,10 @@
 
 .gallery { position: relative; }
 .gallery .main { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
+.gallery .main.zoomable { cursor: zoom-in; }
+.gallery .main.zoom { cursor: zoom-out; transform: scale(1.6); transform-origin: var(--zoom-x, 50%) var(--zoom-y, 50%); transition: transform .18s ease; }
+.gallery .nav { position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 8px; pointer-events: none; }
+.gallery .nav .btn { pointer-events: auto; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); color: #fff; backdrop-filter: blur(4px); }
 .thumbs { display: flex; gap: 10px; margin-top: 12px; overflow-x: auto; }
 .thumbs img { width: 72px; height: 72px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); cursor: pointer; transition: transform .15s ease, box-shadow .25s ease; }
 .thumbs img:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.35); }
@@ -34,25 +38,30 @@
 .badge { background: #0c1014; border: 1px solid var(--border); color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: 12px; }
 .specs { list-style: none; padding: 0; margin: 10px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .specs li { background: #0c1014; border: 1px solid var(--border); padding: 8px 10px; border-radius: 10px; }
+
+/* Ulasan pelanggan */
+.reviews-section { margin-top: 24px; }
+.reviews-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.review-item { border: 1px solid var(--border); border-radius: 12px; background: var(--card); padding: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+.review-item .head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.review-item .name { font-weight: 600; }
+.review-item .stars { color: #fbbf24; }
+.review-item .text { color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+/* Frequently Bought Together */
+.fbt-section { margin-top: 24px; }
+.fbt-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.fbt-item { border: 1px solid var(--border); border-radius: 12px; background: var(--card); padding: 12px; display: grid; grid-template-columns: 56px 1fr auto; align-items: center; gap: 10px; }
+.fbt-item img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); }
+.fbt-item .name { font-weight: 600; }
+.fbt-item .price { font-weight: 700; }
+.fbt-summary { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); }
 .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
 
-/* Custom engraving offer */
-.custom-engrave { margin-top: 14px; padding: 12px; border: 1px solid var(--border); border-radius: 12px; background: #0c1014; }
-.custom-engrave h4 { margin: 0 0 8px; display: flex; align-items: center; gap: 8px; }
-.engrave-form { display: grid; grid-template-columns: 1fr 160px auto auto; gap: 8px; align-items: center; }
-.engrave-form input, .engrave-form select { background: #0a0e12; border: 1px solid var(--border); color: var(--text); padding: 8px 10px; border-radius: 8px; }
-.engrave-price { color: var(--muted); }
-@media (max-width: 700px){ .engrave-form { grid-template-columns: 1fr; } }
-
-/* Engrave validation */
-.engrave-error { color: #ef4444; font-size: 12px; }
-.engrave-form input.error { border-color: #ef4444; box-shadow: 0 0 0 3px rgba(239,68,68,0.15); }
-.engrave-form .hint { color: var(--muted); font-size: 12px; }
-
-/* Engrave preview mini */
-.engrave-preview { grid-column: 1/-1; padding: 8px 10px; border: 1px dashed var(--border); border-radius: 8px; background: rgba(255,255,255,0.03); }
-.engrave-preview .label { color: var(--muted); font-size: 12px; margin-right: 8px; }
-.engrave-preview .sample { font-weight: 600; }
+/* (Ukir custom dipindah ke katalog; gaya khusus dihapus dari halaman produk) */
+/* Banner ukir: posisi dan jarak elegan di halaman produk */
+.details .engrave-offer { margin: 8px 0 12px; }
+.product-container + .engrave-offer { margin: 12px 0; display: flex; }
 
 .info-card { margin-top: 16px; padding: 12px; border: 1px solid var(--border); border-radius: 12px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); }
 .info-card h4 { margin: 0 0 6px; }
@@ -73,3 +82,44 @@
 .gallery video.main { width: 100%; aspect-ratio: 4/3; background: #000; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
 
 @media (max-width: 900px) { .product-container { grid-template-columns: 1fr; } }
+
+/* Katana polish overrides: tipografi, aksen, animasi elegan */
+.details .title { font-family: "Plus Jakarta Sans", Inter, system-ui; letter-spacing: .2px; font-size: clamp(20px, 2.8vw, 28px); }
+.details .title i { color: var(--accent-2); text-shadow: 0 4px 12px rgba(0,0,0,.35); }
+
+/* Judul seksi dengan aksen katana */
+.section-title { position: relative; padding-bottom: 6px; }
+.section-title::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); opacity: .65; }
+.accent-text { background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* Gallery shine dan nav hover */
+.gallery .main { position: relative; overflow: hidden; }
+.gallery .main::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, rgba(255,255,255,0) 45%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0) 55%); opacity: 0; }
+.gallery .main:hover::after { opacity: 1; animation: bladeShine 1.2s ease; }
+.gallery .main.zoom { transition: transform .22s ease; }
+.gallery .nav .btn { transition: transform .15s ease, box-shadow .25s ease; }
+.gallery .nav .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.35); }
+
+/* Hover polish untuk kartu info/kepercayaan/ulasan/FbT */
+.trust-item { transition: transform .18s ease, box-shadow .22s ease; }
+.trust-item:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.25); }
+.trust-item i { color: var(--accent-2); text-shadow: 0 3px 8px rgba(0,0,0,.35); }
+.review-item { transition: transform .18s ease, box-shadow .22s ease; }
+.review-item:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.22); }
+.fbt-item { transition: transform .18s ease, box-shadow .22s ease; }
+.fbt-item:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.22); }
+.info-card { transition: transform .18s ease, box-shadow .22s ease; }
+.info-card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.2); }
+
+/* Purchase bar lebih premium */
+.purchase-bar { background: linear-gradient(180deg, rgba(12,16,20,0.85), rgba(12,16,20,0.92)); backdrop-filter: blur(8px); box-shadow: 0 -8px 24px rgba(0,0,0,.25); }
+.purchase-bar .btn-primary { background: linear-gradient(180deg, var(--accent-1), var(--accent-2)); border-color: transparent; box-shadow: 0 8px 22px rgba(0,0,0,.35); }
+.purchase-bar .btn-primary:hover { filter: brightness(1.05); }
+
+/* Animasi shine pada bilah gambar utama */
+@keyframes bladeShine {
+  0% { transform: translateX(-40%); opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(60%); opacity: 0; }
+}

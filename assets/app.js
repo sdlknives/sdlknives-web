@@ -63,6 +63,15 @@
     setupRevealAnimations();
     const themeBtn = document.getElementById('themeToggle');
     if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+    // Sembunyikan elemen jika gambar gagal dimuat (hanya tampilkan yang ada fotonya)
+    document.addEventListener('error', (e) => {
+      const t = e.target;
+      if (t && t.tagName === 'IMG') {
+        const card = t.closest('.product-card');
+        if (card) { card.remove(); }
+        else { t.remove(); }
+      }
+    }, true);
   }
 
   if (document.readyState === 'loading') {

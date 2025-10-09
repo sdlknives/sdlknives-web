@@ -317,16 +317,18 @@
       }
     }
     load().then((list)=>{
-      const all = (list || []).filter(p => p && p.visible !== false);
+      const all = (list || [])
+        .map(p => ({ ...p, imageUrl: p.imageUrl || (Array.isArray(p.images) ? p.images[0] : '') }))
+        .filter(p => p && p.visible !== false && p.imageUrl);
       const picks = all.slice(0, 4);
       if (!picks.length) { container.innerHTML = '<p class="muted">Produk akan segera ditampilkan.</p>'; return; }
       container.innerHTML = picks.map(p => `
         <article class="product-card reveal">
-          ${p.imageUrl ? `<img src="${p.imageUrl}" alt="${p.name}" loading="lazy" />` : '<div class="img" aria-hidden="true"></div>'}
+          <img src="${p.imageUrl}" alt="${p.name}" loading="lazy" decoding="async" onerror="this.closest('.product-card')?.remove()" />
           <div class="body">
             <div class="name">${p.name || 'Produk'}</div>
             <div class="price">${rupiah(p.price)}</div>
-            <div class="actions"><a class="btn btn-primary" href="catalog.html"><i class="bi bi-bag"></i> Beli</a></div>
+            <div class="actions"><a class="btn btn-primary" href="catalog.html"><i class="bi bi-bag"></i> Beli ${p.name || ''}</a></div>
           </div>
         </article>
       `).join('');

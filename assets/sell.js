@@ -86,10 +86,10 @@
 (function(){
   const root = document.documentElement;
   const ACCENTS = {
-    all: ['#8a2be2','#2f81f7','#00d1ff'],
+  all: ['#8a2be2','#ef4444','#f59e0b'],
     katana: ['#ef4444','#b45309','#f59e0b'],
     bedog: ['#16a34a','#22c55e','#10b981'],
-    damascus: ['#3b82f6','#06b6d4','#00d1ff'],
+  damascus: ['#b91c1c','#ef4444','#f59e0b'],
     dapur: ['#fb7185','#f97316','#f59e0b'],
     edc: ['#8b5cf6','#a78bfa','#c084fc'],
     alat: ['#475569','#64748b','#94a3b8']
@@ -110,6 +110,8 @@
 
 // Animasi muncul bertahap saat scroll untuk grid besar
 (function(){
+  // Definisikan preferensi reduced motion di scope ini untuk mencegah ReferenceError
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function setupIntersectionReveal(){
     const opts = { root: null, threshold: 0.15 };
     const observer = new IntersectionObserver((entries) => {

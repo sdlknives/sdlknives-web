@@ -1,7 +1,7 @@
 // Interaksi halaman Kontak: validasi form, build tautan WA, micro-animasi
 (function(){
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const WHATSAPP_NUMBER = '6281234567890';
+  const WHATSAPP_NUMBER = '6287767896317';
 
   const q = (sel) => document.querySelector(sel);
   const qa = (sel) => Array.from(document.querySelectorAll(sel));
@@ -84,9 +84,26 @@
     });
   }
 
+  // Inisialisasi peta Leaflet pada halaman Kontak
+  function setupMap(){
+    try {
+      const el = document.getElementById('map');
+      if (!el || typeof L === 'undefined') return; // Leaflet belum dimuat atau elemen tidak ada
+      const coords = [-7.1420, 107.4940]; // Mekarmaju, Pasirjambu, Kab. Bandung
+      const map = L.map('map', { zoomControl: true }).setView(coords, 14);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+      const marker = L.marker(coords).addTo(map);
+      marker.bindPopup('<strong>SDL KNIVES</strong><br/>Kampung Pandai Besi Salamanjah RT 002/RW 014,<br/>Desa Mekarmaju, Kec. Pasirjambu,<br/>Kab. Bandung, Jawa Barat');
+    } catch (err) {
+      console.warn('Gagal memuat peta:', err);
+    }
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', ()=>{ setupForm(); setupCardMotion(); });
+    document.addEventListener('DOMContentLoaded', ()=>{ setupForm(); setupCardMotion(); setupMap(); });
   } else {
-    setupForm(); setupCardMotion();
+    setupForm(); setupCardMotion(); setupMap();
   }
 })();

@@ -18,11 +18,13 @@
     <link rel="stylesheet" href="assets/layout.css" />
     <link rel="stylesheet" href="assets/sell.css" />
     <link rel="preload" as="image" href="foto/logo.jpg" fetchpriority="high" />
-    <link rel="preload" as="image" href="foto/bg1 (1).jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="produk/golok4.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="produk/mandau.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="produk/kukri.jpg" fetchpriority="high" />
   </head>
-  <body class="catalog-katana">
+  <body class="catalog-katana" data-anim="subtle">
     <a href="#catalog" class="skip-link">Lewati ke konten</a>
-    <header class="site-header over-hero">
+    <header class="site-header">
       
       <div class="container mainbar">
         <div class="brand"><img class="logo" src="foto/logo.jpg" alt="SDL KNIVES Logo" /><span class="name">SDL KNIVES</span></div>
@@ -35,13 +37,14 @@
     </header>
 
     <main class="container">
-      <section class="card banner full-bleed reveal" style="background-image: url('foto/bg1 (1).jpg'); background-size: cover; background-position: center;">
-        <div class="banner-inner">
-          <h1>Samurai Katana Collection</h1>
+ <section class="card banner full-bleed reveal bg-modern-catalog hero-visual">
+          <div class="hero-bg" aria-hidden="true" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.25)), url('produk/golok4.jpg');"></div>
+          <div class="banner-inner">
+          <h1 class="accent-text accent-animated">Ketajaman Asli, Dibuat Tangan Pandai Besi Pilihan</h1>
           <p class="muted">Desain modern, performa tajam — pilih kategori favorit.</p>
           <div class="chips" id="chips">
             <button class="chip active" data-filter="all"><i class="bi bi-stars"></i> Semua</button>
-            <button class="chip" data-filter="bedog">Bedog</button>
+            <button class="chip" data-filter="golok">Golok</button>
             <button class="chip" data-filter="katana">Katana</button>
             <button class="chip" data-filter="katana">Samurai</button>
             <button class="chip" data-filter="damascus">Damascus</button>
@@ -50,15 +53,19 @@
             <button class="chip" data-filter="alat">Alat & Aksesori</button>
           </div>
           <div class="toolbar" id="toolbar">
-            <div class="search"><i class="bi bi-search"></i><input id="searchInput" placeholder="Cari produk…" /></div>
-            <label for="sortSelect"><i class="bi bi-arrow-up-down"></i> Urutkan</label>
-            <select id="sortSelect">
+            <div class="search"><i class="bi bi-search"></i><input id="searchInput" type="search" placeholder="Cari produk…" aria-label="Cari produk" /></div>
+            <label for="sortSelect" class="link"><i class="bi bi-arrow-up-down"></i> Urutkan</label>
+            <select id="sortSelect" aria-label="Urutkan">
               <option value="asc">Harga Terendah</option>
               <option value="desc">Harga Tertinggi</option>
               <option value="newest">Terbaru</option>
             </select>
           </div>
           <div id="categoryHero" class="category-hero" aria-live="polite"></div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#catalog"><i class="bi bi-grid-3x3-gap"></i> Lihat Semua Produk</a>
+            <a class="btn outline" target="_blank" href="https://wa.me/6287767896317?text=Halo%20Admin%20SDL%20KNIVES%2C%20saya%20ingin%20konsultasi%20koleksi%20katana."><i class="bi bi-whatsapp"></i> Konsultasi Knives</a>
+          </div>
         </div>
       </section>
 
@@ -71,30 +78,34 @@
       </div>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer reveal">
       <div class="container footer-grid">
         <div>
           <img class="footer-logo" src="foto/logo.jpg" alt="SDL KNIVES Logo" />
           <h4 class="footer-title">SDL KNIVES</h4>
-          <p class="muted">Pisau premium: Bedog, Katana, dan Chef Series. Handmade dengan perhatian pada detail.</p>
+          <p class="muted">Pisau premium: Golok, Katana, dan Chef Series. Handmade dengan perhatian pada detail.</p>
+          <ul class="footer-contact">
+            <li><i class="bi bi-telephone"></i><a href="https://wa.me/6287767896317" target="_blank">6287767896317</a></li>
+            <li><i class="bi bi-geo-alt"></i><span>Kampung Pandai Besi Salamanjah, RT 002/RW 014, Desa Mekarmaju, Kec. Pasirjambu, Kab. Bandung, Jawa Barat</span></li>
+            <li><i class="bi bi-clock"></i><span>Senin–Sabtu 09:00–17:00</span></li>
+          </ul>
           <div class="social">
-            <a href="https://instagram.com/sdlknives" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-            <a href="https://shopee.co.id/sdlknives" target="_blank" aria-label="Shopee"><i class="bi bi-bag"></i></a>
-            <a href="https://www.tiktok.com/@sdlknives" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://wa.me/6287767896317" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i><span class="label">WhatsApp</span></a>
+            <a href="https://www.tiktok.com/@sdlbajastore?_t=ZS-90IOgo96xdA&_r=1" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i><span class="label">TikTok</span></a>
+            <a href="https://www.instagram.com/sdlbajastore/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i><span class="label">Instagram</span></a>
+            <a href="https://m.facebook.com/sdlknives/" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i><span class="label">Facebook</span></a>
+            <a href="https://youtube.com/@sdlbaja_store?si=Ufut1C3KFJ2vGUKP&sub_confirmation=1" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i><span class="label">YouTube</span></a>
+            <a href="https://id.shp.ee/vPcg1mc" target="_blank" aria-label="Shopee"><i class="bi bi-bag"></i><span class="label">Shopee</span></a>
           </div>
-          <p class="muted" style="font-size:13px; margin-top:8px;">Alamat: Jl. Contoh No. 123, Bandung<br/>Jam: Senin–Sabtu 09:00–17:00</p>
         </div>
         <div>
           <h4 class="footer-title">Belanja</h4>
           <a href="catalog.html">Katalog</a><br/>
-          <a href="catalog.html#bedog">Bedog</a><br/>
+          <a href="catalog.html#Golok">Golok</a><br/>
           <a href="catalog.html#katana">Katana</a><br/>
           <a href="catalog.html#dapur">Dapur</a><br/>
-          <a href="https://shopee.co.id/sdlknives" target="_blank">Shopee</a><br/>
-          <a href="https://www.tiktok.com/@sdlknives" target="_blank">TikTok Shop</a>
+          <a href="https://id.shp.ee/vPcg1mc" target="_blank">Shopee</a><br/>
+          <a href="https://www.tiktok.com/@sdlbajastore?_t=ZS-90IOgo96xdA&_r=1" target="_blank">TikTok Shop</a>
         </div>
         <div>
           <h4 class="footer-title">Bantuan</h4>
@@ -120,17 +131,17 @@
     </footer>
 
     <script>
-      const WHATSAPP_NUMBER = '6281234567890'; // ganti dengan nomor admin
+      const WHATSAPP_NUMBER = '6287767896317'; // ganti dengan nomor admin
 
       const rupiah = (n) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(n);
 
       const buildWA = (p) => {
         const message = `Halo Admin SDL KNIVES,%0A%0A` +
-          `Saya ingin beli:%0A` +
-          `Nama: ${encodeURIComponent(p.name)}%0A` +
-          `Harga: ${encodeURIComponent(rupiah(p.price))}%0A` +
+          `Saya ingin konsultasi gratis personalisasi bilah & sarung.%0A` +
+          `Produk: ${encodeURIComponent(p.name)}%0A` +
+          `Harga Produk: ${encodeURIComponent(rupiah(p.price))}%0A` +
           `Gambar: ${encodeURIComponent(p.imageUrl)}%0A` +
-          `Link Produk: ${encodeURIComponent(window.location.href)}`;
+          `Link Katalog: ${encodeURIComponent(window.location.href)}`;
         return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
       };
 
@@ -138,36 +149,56 @@
         const el = document.getElementById('catalog');
         el.setAttribute('aria-busy', 'true');
         el.innerHTML = '<div class="card" role="status" aria-live="polite">Memuat data produk…</div>';
-        try {
-          const res = await fetch('api/products.php?action=list');
-          const data = await res.json();
-          const products = (data.products || []).filter(p => p.visible !== false);
-          if (!products.length) {
+        async function renderList(products){
+          if (!Array.isArray(products) || !products.length) {
             el.innerHTML = '<div class="card" role="status" aria-live="polite">Belum ada produk ditampilkan.</div>';
+            el.removeAttribute('aria-busy');
             return;
           }
-          el.innerHTML = products.map(p => `
-            <article class="product-card">
-              <img src="${p.imageUrl}" alt="${p.name}" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+          el.innerHTML = products.filter(p => p.visible !== false).map(p => `
+            <article class="product-card" data-id="${p.id}">
+              <a class="image-link" href="product.html?id=${p.id}" aria-label="Lihat detail ${p.name}">
+                <img src="${p.imageUrl}" alt="${p.name}" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              </a>
               <div class="body">
-                <div class="name">${p.name}</div>
+                <h3 class="name"><i class="bi ${iconFor(inferCategory(p.name))}"></i> ${p.name}</h3>
                 <div class="price">${rupiah(p.price)}</div>
+        ${(p.enableEngrave === true) ? `<div class="engrave-offer"><i class="bi bi-pencil-square"></i> Personalize bilah & sarung — konsultasi gratis</div>` : ''}
                 <p>${p.description || ''}</p>
-                <a class="btn btn-primary" target="_blank" href="${buildWA(p)}"><i class="bi bi-whatsapp"></i> Beli via WhatsApp</a>
+        <a class="btn btn-primary" target="_blank" href="${buildWA(p)}"><i class="bi bi-whatsapp"></i> Beli via WA</a>
               </div>
             </article>
           `).join('');
           el.removeAttribute('aria-busy');
+        }
+
+        // Coba API terlebih dahulu, lalu fallback ke file JSON lokal jika gagal
+        try {
+          const res = await fetch('api/products.php?action=list');
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          await renderList(data.products || []);
         } catch (e) {
-          el.innerHTML = `<div class="card" role="alert">Gagal memuat data: ${e.message}</div>`;
+          try {
+            const res2 = await fetch('data/products.json');
+            const data2 = await res2.json();
+            await renderList(data2.products || []);
+          } catch (e2) {
+            el.innerHTML = `<div class="card" role="alert">Gagal memuat data produk.</div>`;
+            el.removeAttribute('aria-busy');
+          }
         }
       }
 
       // ==== Enhancements: kategorisasi, skeleton, dan filter chips ====
       function inferCategory(name = '') {
         const s = name.toLowerCase();
+        if (s.includes('pisau')) return 'pisau';
+        if (s.includes('carok')) return 'carok';
+        if (s.includes('paket') || s.includes('paketan')) return 'paketan';
+        if (s.includes('kampak') || s.includes('kapak') || s.includes('kopak')) return 'kampak';
         if (s.includes('katana') || s.includes('samurai')) return 'katana';
-        if (s.includes('bedog') || s.includes('golok')) return 'bedog';
+        if (s.includes('Golok') || s.includes('golok')) return 'Golok';
         if (s.includes('damascus')) return 'damascus';
         if (s.includes('alat') || s.includes('aksesori') || s.includes('sarung') || s.includes('sheath') || s.includes('batu asah') || s.includes('whetstone')) return 'alat';
         if (s.includes('chef') || s.includes('dapur')) return 'dapur';
@@ -176,12 +207,33 @@
       }
 
       function categoryLabel(cat) {
-        return ({ katana: 'Katana', bedog: 'Bedog', damascus: 'Damascus', dapur: 'Dapur', edc: 'EDC', alat: 'Alat & Aksesori', umum: 'Umum' })[cat] || 'Umum';
+        return ({ pisau: 'Pisau', carok: 'Carok', paketan: 'Paketan', kampak: 'Kampak', katana: 'Katana', Golok: 'Golok', damascus: 'Damascus', dapur: 'Dapur', edc: 'EDC', alat: 'Alat & Aksesori', umum: 'Umum' })[cat] || 'Umum';
+      }
+
+      function iconFor(cat) {
+        const map = {
+          pisau: 'bi-scissors',
+          carok: 'bi-lightning-charge',
+          paketan: 'bi-box-seam',
+          kampak: 'bi-hammer',
+          katana: 'bi-stars',
+          Golok: 'bi-shield-check',
+          damascus: 'bi-gem',
+          dapur: 'bi-egg-fried',
+          edc: 'bi-backpack',
+          alat: 'bi-tools',
+          umum: 'bi-award'
+        };
+        return map[cat] || map.umum;
       }
 
       const MICRO_COPY = {
+        pisau: 'Beragam pisau untuk kebutuhan harian maupun koleksi.',
+        carok: 'Bilah khas carok dengan karakter tajam dan tradisi kuat.',
+        paketan: 'Bundel hemat: kombinasi produk terbaik dalam satu paket.',
+        kampak: 'Kampak/kapak untuk kerja berat, outdoor, dan utilitas.',
         katana: 'Bilahan panjang bergaya samurai untuk koleksi dan display elegan.',
-        bedog: 'Pisau tradisional serbaguna untuk kerja berat dan aktivitas outdoor.',
+        Golok: 'Pisau tradisional serbaguna untuk kerja berat dan aktivitas outdoor.',
         damascus: 'Eksotis dengan pola lipatan baja, performa sekaligus estetika.',
         dapur: 'Chef knife dan utilitas dapur untuk presisi memasak harian.',
         edc: 'Pisau lipat praktis untuk penggunaan harian (Everyday Carry).',
@@ -190,10 +242,14 @@
 
       // Tema aksen per kategori untuk nuansa premium
       const ACCENTS = {
-        all: ['#8a2be2','#2f81f7','#00d1ff'],
-        katana: ['#ef4444','#b45309','#f59e0b'],
-        bedog: ['#16a34a','#22c55e','#10b981'],
-        damascus: ['#3b82f6','#06b6d4','#00d1ff'],
+      all: ['#8a2be2','#ef4444','#f59e0b'],
+        pisau: ['#ef4444','#f59e0b','#8a2be2'],
+        carok: ['#b91c1c','#ef4444','#f59e0b'],
+        paketan: ['#22c55e','#14b8a6','#06b6d4'],
+        kampak: ['#475569','#64748b','#94a3b8'],
+        katana: ['#b91c1c','#d4af37','#f59e0b'],
+        Golok: ['#15803d','#22c55e','#10b981'],
+      damascus: ['#b91c1c','#ef4444','#f59e0b'],
         dapur: ['#fb7185','#f97316','#f59e0b'],
         edc: ['#8b5cf6','#a78bfa','#c084fc'],
         alat: ['#475569','#64748b','#94a3b8']
@@ -210,8 +266,8 @@
       function updateBanner(cat = 'all') {
         const titleEl = document.querySelector('.banner h1');
         const heroEl = document.getElementById('categoryHero');
-        const iconMap = { katana: 'bi-lightning-charge', bedog: 'bi-fire', damascus: 'bi-gem', dapur: 'bi-basket', edc: 'bi-gear', alat: 'bi-tools', all: 'bi-stars' };
-        const label = cat === 'all' ? 'Bedog & Katana Collection' : `${categoryLabel(cat)} Collection`;
+        const iconMap = { pisau: 'bi-scissors', carok: 'bi-lightning-charge', paketan: 'bi-box-seam', kampak: 'bi-hammer', katana: 'bi-lightning-charge', Golok: 'bi-fire', damascus: 'bi-gem', dapur: 'bi-basket', edc: 'bi-gear', alat: 'bi-tools', all: 'bi-stars' };
+        const label = cat === 'all' ? 'Golok & Katana Collection' : `${categoryLabel(cat)} Collection`;
         if (titleEl) {
           titleEl.classList.remove('swap');
           void titleEl.offsetWidth; // restart animation
@@ -226,6 +282,36 @@
         }
       }
 
+      // === Rotasi background hero menggunakan foto produk ===
+      const HERO_IMAGES = [
+        'produk/golok4.jpg',
+        'produk/mandau.jpg',
+        'produk/kukri.jpg',
+        'produk/krambit.jpg',
+        'produk/jumbo.jpg',
+        'produk/chopper.jpg',
+        'produk/fillet.jpg',
+        'produk/pisau.jpg'
+      ].filter(src => !!src);
+
+      function setupHeroRotation() {
+        const el = document.querySelector('.banner .hero-bg');
+        if (!el || !HERO_IMAGES.length) return;
+        let i = 0;
+        const setBg = (src) => {
+          el.classList.remove('fade-in');
+          void el.offsetWidth;
+          el.style.backgroundImage = `linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.25)), url('${src}')`;
+          el.classList.add('fade-in');
+        };
+        setBg(HERO_IMAGES[0]);
+        setInterval(() => {
+          i = (i + 1) % HERO_IMAGES.length;
+          setBg(HERO_IMAGES[i]);
+        }, 6500);
+      }
+      document.addEventListener('DOMContentLoaded', setupHeroRotation);
+
       let PRODUCTS = [];
       let PAGE = 1;
       const PAGE_SIZE = 6;
@@ -238,14 +324,17 @@
           <article class="product-card on-scroll reveal" data-id="${p.id}" data-index="${i}">
             <div class="ribbon">${categoryLabel(p.category)}</div>
             <span class="stock-badge">Ready</span>
-            <img loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw" src="${p.imageUrl}" alt="${p.name}" />
+            <a class="image-link" href="product.html?id=${p.id}" aria-label="Lihat detail ${p.name}">
+              <img loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw" src="${p.imageUrl}" alt="${p.name}" />
+            </a>
             <div class="body">
-              <h3 class="name">${p.name}</h3>
+              <h3 class="name"><i class="bi ${iconFor(p.category || inferCategory(p.name))}"></i> ${p.name}</h3>
               <div class="price price-tag"><span class="dot"></span>${rupiah(p.price)}</div>
+        ${(p.enableEngrave === true) ? `<div class="engrave-offer"><i class="bi bi-pencil-square"></i> Personalize bilah & sarung — konsultasi gratis</div>` : ''}
               <p>${p.description || ''}</p>
               <div class="actions" style="display:flex; gap:8px; flex-wrap:wrap;">
                 <a class="btn detail-btn" href="product.html?id=${p.id}" data-id="${p.id}"><i class="bi bi-eye"></i> Detail</a>
-                <a class="btn btn-primary" target="_blank" href="${buildWA(p)}"><i class="bi bi-whatsapp"></i> Beli via WhatsApp</a>
+        <a class="btn btn-primary" target="_blank" href="${buildWA(p)}"><i class="bi bi-whatsapp"></i> Beli via WA</a>
               </div>
             </div>
           </article>
@@ -262,12 +351,13 @@
             <span class="stock-badge">Ready</span>
             <img loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw" src="${p.imageUrl}" alt="${p.name}" />
             <div class="body">
-              <h3 class="name">${p.name}</h3>
+              <h3 class="name"><i class="bi ${iconFor(p.category || inferCategory(p.name))}"></i> ${p.name}</h3>
               <div class="price price-tag"><span class="dot"></span>${rupiah(p.price)}</div>
+        ${(p.enableEngrave === true) ? `<div class="engrave-offer"><i class="bi bi-pencil-square"></i> Personalize bilah & sarung — konsultasi gratis</div>` : ''}
               <p>${p.description || ''}</p>
               <div class="actions" style="display:flex; gap:8px; flex-wrap:wrap;">
                 <a class="btn detail-btn" href="product.html?id=${p.id}" data-id="${p.id}"><i class="bi bi-eye"></i> Detail</a>
-                <a class="btn btn-primary" target="_blank" href="${buildWA(p)}"><i class="bi bi-whatsapp"></i> Beli via WhatsApp</a>
+        <a class="btn btn-primary" target="_blank" href="${buildWA(p)}"><i class="bi bi-whatsapp"></i> Konsultasi Gratis & Beli</a>
               </div>
             </div>
           </article>
@@ -278,7 +368,8 @@
 
       function renderBySections(listAll) {
         const el = document.getElementById('catalog');
-        const order = ['katana', 'bedog', 'damascus', 'dapur', 'edc', 'alat'];
+        // Sertakan kategori 'umum' agar produk generik (mis. kampak) tampil di mode "Semua"
+        const order = ['katana', 'Golok', 'damascus', 'dapur', 'edc', 'alat', 'umum'];
         const sections = order.map(cat => {
           const items = listAll.filter(p => p.category === cat);
           if (!items.length) return '';
@@ -291,12 +382,13 @@
                 <span class="stock-badge">Ready</span>
                 <img loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw" src="${p.imageUrl}" alt="${p.name}" />
                 <div class="body">
-                  <h3 class="name">${p.name}</h3>
+                  <h3 class="name"><i class="bi ${iconFor(p.category || inferCategory(p.name))}"></i> ${p.name}</h3>
                   <div class="price price-tag"><span class="dot"></span>${rupiah(p.price)}</div>
+                  ${(p.enableEngrave === true) ? `<div class="engrave-offer"><i class="bi bi-pencil-square"></i> Ukir custom bilah tersedia</div>` : ''}
                   <p>${p.description || ''}</p>
                   <div class="actions" style="display:flex; gap:8px; flex-wrap:wrap;">
                     <a class="btn detail-btn" href="product.html?id=${p.id}" data-id="${p.id}"><i class="bi bi-eye"></i> Detail</a>
-                    <a class="btn btn-primary" target="_blank" href="${buildWA(p)}"><i class="bi bi-whatsapp"></i> Beli via WhatsApp</a>
+                    <a class="btn btn-primary" target="_blank" href="${buildWA(p)}"><i class="bi bi-whatsapp"></i> Beli via WA</a>
                   </div>
                 </div>
               </article>
@@ -305,6 +397,29 @@
           return `${heading}${copy}${grid}`;
         }).filter(Boolean).join('\n');
         el.innerHTML = sections || '<div class="card" role="status" aria-live="polite">Belum ada produk ditampilkan.</div>';
+        setupDetailEvents();
+      }
+
+      // Mode "Semua": satukan semua produk dalam satu grid tanpa heading kategori
+      function renderUnifiedGrid(listAll) {
+        const el = document.getElementById('catalog');
+        const html = listAll.map((p, i) => `
+          <article class="product-card on-scroll reveal" data-id="${p.id}" data-index="${i}">
+            <span class="stock-badge">Ready</span>
+            <img loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 720px) 100vw, (max-width: 1200px) 50vw, 33vw" src="${p.imageUrl}" alt="${p.name}" />
+            <div class="body">
+              <h3 class="name"><i class="bi ${iconFor(p.category || inferCategory(p.name))}"></i> ${p.name}</h3>
+              <div class="price price-tag"><span class="dot"></span>${rupiah(p.price)}</div>
+              ${(p.enableEngrave === true) ? `<div class=\"engrave-offer\"><i class=\"bi bi-pencil-square\"></i> Ukir custom bilah tersedia</div>` : ''}
+              <p>${p.description || ''}</p>
+              <div class="actions" style="display:flex; gap:8px; flex-wrap:wrap;">
+                <a class="btn detail-btn" href="product.html?id=${p.id}" data-id="${p.id}"><i class="bi bi-eye"></i> Detail ${p.name}</a>
+                <a class="btn btn-primary" target="_blank" href="${buildWA(p)}"><i class="bi bi-whatsapp"></i> Beli via WA</a>
+              </div>
+            </div>
+          </article>
+        `).join('');
+        el.innerHTML = html || '<div class="card" role="status" aria-live="polite">Belum ada produk ditampilkan.</div>';
         setupDetailEvents();
       }
 
@@ -327,7 +442,22 @@
         if (next) { next.disabled = PAGE >= totalPages; next.setAttribute('aria-disabled', next.disabled ? 'true' : 'false'); }
       }
 
+      // Render chips kategori secara dinamis berdasarkan data produk yang tersedia
+      function renderCategoryChips() {
+        const chipsEl = document.getElementById('chips');
+        if (!chipsEl) return;
+        const present = new Set(PRODUCTS.map(p => p.category));
+        const order = ['pisau','carok','paketan','kampak','Golok','katana','damascus','dapur','edc','alat']; // tidak menampilkan 'umum' pada favorit
+        const html = [
+          `<button class="chip active" data-filter="all"><i class="bi bi-stars"></i> Semua</button>`,
+          ...order.filter(cat => present.has(cat)).map(cat => `<button class="chip" data-filter="${cat}">${categoryLabel(cat)}</button>`)
+        ].join('\n');
+        chipsEl.innerHTML = html;
+      }
+
       function setupChips() {
+        // Pastikan chips dirender ulang mengikuti kategori yang tersedia
+        renderCategoryChips();
         const chips = document.querySelectorAll('#chips .chip');
         const chipsWrap = document.getElementById('chips');
         chipsWrap?.setAttribute('role', 'toolbar');
@@ -349,7 +479,7 @@
           const pagerEl = document.getElementById('pager');
           if (currentCat === 'all') {
             pagerEl?.classList.add('hidden');
-            renderBySections(list);
+            renderUnifiedGrid(list);
           } else {
             pagerEl?.classList.remove('hidden');
             updatePager(list.length);
@@ -383,15 +513,24 @@
           });
         });
 
-        // Inisialisasi berdasar hash (#katana/#bedog/...) dan query ?q=
-        const initialCat = (location.hash || '').replace('#', '') || 'all';
+        // Inisialisasi berdasar hash (#katana/#Golok/...) dan query ?q=
+        let initialCat = (location.hash || '').replace('#', '') || 'all';
+        // Jika hash mengarah ke kategori yang tidak ada, fallback ke 'all'
+        if (![...chips].some(c => c.dataset.filter === initialCat)) initialCat = 'all';
         chips.forEach(c => { if (c.dataset.filter === initialCat) { c.classList.add('active'); c.setAttribute('aria-pressed','true'); } else { c.setAttribute('aria-pressed','false'); } });
         applyFilters(initialCat, query);
 
         // Re-apply saat hash berubah (klik "Lihat semua" / navigasi anchor)
         window.addEventListener('hashchange', () => {
-          const newCat = (location.hash || '').replace('#', '') || 'all';
-          chips.forEach(c => { const active = c.dataset.filter === newCat; c.classList.toggle('active', active); c.setAttribute('aria-pressed', active ? 'true' : 'false'); });
+          // Saat hash bukan kategori valid (mis. #catalog), fallback ke 'all'
+          const raw = (location.hash || '').replace('#', '') || 'all';
+          const valid = [...chips].map(c => c.dataset.filter);
+          const newCat = valid.includes(raw) ? raw : 'all';
+          chips.forEach(c => {
+            const active = c.dataset.filter === newCat;
+            c.classList.toggle('active', active);
+            c.setAttribute('aria-pressed', active ? 'true' : 'false');
+          });
           PAGE = 1;
           applyFilters(newCat, query);
         });
@@ -443,13 +582,25 @@
         `).join('');
         try {
           const res = await fetch('api/products.php?action=list');
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
           const data = await res.json();
           PRODUCTS = (data.products || [])
             .filter(p => p.visible !== false)
-            .map(p => ({ ...p, category: inferCategory(p.name) }));
+            .map(p => ({ ...p, imageUrl: p.imageUrl || (Array.isArray(p.images) ? p.images[0] : ''), category: inferCategory(p.name) }));
           setupChips();
         } catch (e) {
-          el.innerHTML = `<div class=\"card\">Gagal memuat data: ${e.message}</div>`;
+          // Fallback untuk hosting statis (mis. GitHub Pages): baca langsung data/products.json
+          try {
+            const res2 = await fetch('data/products.json');
+            if (!res2.ok) throw new Error(`HTTP ${res2.status}`);
+            const data2 = await res2.json();
+            PRODUCTS = (data2.products || [])
+              .filter(p => p.visible !== false)
+              .map(p => ({ ...p, imageUrl: p.imageUrl || (Array.isArray(p.images) ? p.images[0] : ''), category: inferCategory(p.name) }));
+            setupChips();
+          } catch (e2) {
+            el.innerHTML = `<div class="card" role="alert">Gagal memuat data katalog: ${(e && e.message) || ''} ${(e2 && e2.message) || ''}</div>`;
+          }
         }
       };
 
@@ -473,7 +624,7 @@
         // document.querySelectorAll('.detail-btn').forEach(... )
         // Klik kartu juga membuka detail
         document.querySelectorAll('.product-card').forEach(c => c.addEventListener('click', (e) => {
-          if (e.target.closest('.btn')) return; // jika klik tombol WA, abaikan
+          if (e.target.closest('.btn') || e.target.closest('.image-link')) return; // jika klik tombol WA atau gambar (link), biarkan default
           openHandlers(e);
         }));
         // Tutup
@@ -525,10 +676,42 @@
         });
       })();
     </script>
+    <script>
+      // Animasi elegan untuk banner ukir (.engrave-offer) saat muncul di viewport
+      (function(){
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        function setupEngraveReveal(root = document){
+          const offers = root.querySelectorAll('.engrave-offer');
+          if (!offers.length) return;
+          if (prefersReduced) { offers.forEach(o => o.classList.add('engrave-visible')); return; }
+          const anim = document.documentElement.dataset.anim || 'subtle';
+          const ioThreshold = anim === 'bold' ? 0.08 : 0.25;
+          const io = new IntersectionObserver((entries)=>{
+            entries.forEach((entry)=>{
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('engrave-visible');
+              io.unobserve(entry.target);
+            });
+          }, { threshold: ioThreshold });
+          offers.forEach(o => io.observe(o));
+        }
+        // Observe perubahan pada grid katalog agar banner baru ikut dianimasikan
+        const catalog = document.getElementById('catalog');
+        if (catalog) {
+          const mo = new MutationObserver(() => setupEngraveReveal(catalog));
+          mo.observe(catalog, { childList: true, subtree: true });
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => setupEngraveReveal());
+        } else {
+          setupEngraveReveal();
+        }
+      })();
+    </script>
     <script src="assets/app.js"></script>
     <script src="assets/layout.js"></script>
     <script src="assets/sell.js"></script>
-    <a class="help-fab" href="https://wa.me/6281234567890" target="_blank" aria-label="Bantuan WhatsApp">
+    <a class="help-fab" href="https://wa.me/6287767896317" target="_blank" aria-label="Bantuan WhatsApp">
       <i class="bi bi-whatsapp"></i>
       <span class="label">Butuh bantuan?</span>
     </a>

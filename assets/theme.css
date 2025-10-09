@@ -9,15 +9,15 @@ body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
 /* Palet aksen global untuk efek warna & gradient */
 :root {
   --accent-a: #8a2be2; /* electric purple */
-  --accent-b: #2f81f7; /* royal blue */
+  --accent-b: #ef4444; /* katana red */
   --accent-c: #00d1ff; /* cyan glow */
   /* Palet inti untuk konsistensi tema gelap */
   --bg: #0f1215;
   --card: #151a1f;
   --text: #e6e9ed;
-  --muted: #9aa4ae;
-  --primary: #2f81f7;
-  --primary-700: #226ad1;
+  --muted: #b4bec8;
+  --primary: #ef4444;
+  --primary-700: #b91c1c;
   --border: #21262d;
 }
 
@@ -68,7 +68,7 @@ body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
 .icon-btn:hover { border-color: var(--primary); color: var(--primary); }
 
 /* Hero dan card efek modern */
-.hero h1 { font-size: clamp(24px, 4vw, 36px); }
+.hero h1 { font-size: clamp(22px, 3.6vw, 32px); }
 .card { box-shadow: 0 10px 32px rgba(0,0,0,0.25); transition: transform .2s ease, box-shadow .2s ease; }
 .card:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0,0,0,0.28); }
 
@@ -95,7 +95,7 @@ body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
   --card: #ffffff;
   --text: #0f1215;
   --muted: #4c5560;
-  --primary: #2f81f7;
-  --primary-700: #226ad1;
+  --primary: #ef4444;
+  --primary-700: #b91c1c;
   --border: #e6e9ee;
 }
