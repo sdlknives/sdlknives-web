@@ -493,7 +493,15 @@ loadProducts = async function () {
       if (!resJ.ok) throw new Error(`HTTP ${resJ.status}`);
       const dataJ = await resJ.json();
       PRODUCTS = (dataJ.products || [])
-        .map(p => ({ ...p, imageUrl: p.imageUrl || (Array.isArray(p.images) ? p.images[0] : ''), category: p.category || inferCategory(p.name) }));
+        .map(p => {
+          const imgs = normalizeImagesArray(p.images);
+          return {
+            ...p,
+            images: imgs,
+            imageUrl: derivePrimaryImage({ ...p, images: imgs }),
+            category: p.category || inferCategory(p.name)
+          };
+        });
       setupChips();
       return;
     } else if (srcPref === 'api') {
@@ -501,19 +509,31 @@ loadProducts = async function () {
       if (!resA.ok) throw new Error(`HTTP ${resA.status}`);
       const dataA = await resA.json();
       PRODUCTS = (dataA.products || [])
-        .map(p => ({ ...p, imageUrl: p.imageUrl || (Array.isArray(p.images) ? p.images[0] : ''), category: p.category || inferCategory(p.name) }));
+        .map(p => {
+          const imgs = normalizeImagesArray(p.images);
+          return {
+            ...p,
+            images: imgs,
+            imageUrl: derivePrimaryImage({ ...p, images: imgs }),
+            category: p.category || inferCategory(p.name)
+          };
+        });
       setupChips();
       return;
     } else if (srcPref === 'supabase' && window.supaListProducts) {
       const rowsS = await window.supaListProducts();
       PRODUCTS = (rowsS || [])
-        .map(p => ({
-          ...p,
-          id: String(p.id),
-          imageUrl: p.imageUrl || p.image_url || (Array.isArray(p.images) ? p.images[0] : ''),
-          enableEngrave: p.enableEngrave ?? p.enable_engrave ?? false,
-          category: p.category || inferCategory(p.name)
-        }));
+        .map(p => {
+          const imgs = normalizeImagesArray(p.images);
+          return {
+            ...p,
+            id: String(p.id),
+            images: imgs,
+            imageUrl: derivePrimaryImage({ ...p, images: imgs }),
+            enableEngrave: p.enableEngrave ?? p.enable_engrave ?? false,
+            category: p.category || inferCategory(p.name)
+          };
+        });
       setupChips();
       return;
     }
@@ -524,20 +544,32 @@ loadProducts = async function () {
     if (window.supaListProducts) {
       const rows = await window.supaListProducts();
       PRODUCTS = (rows || [])
-        .map(p => ({
-          ...p,
-          id: String(p.id),
-          imageUrl: p.imageUrl || p.image_url || (Array.isArray(p.images) ? p.images[0] : ''),
-          enableEngrave: p.enableEngrave ?? p.enable_engrave ?? false,
-          category: p.category || inferCategory(p.name)
-        }));
+        .map(p => {
+          const imgs = normalizeImagesArray(p.images);
+          return {
+            ...p,
+            id: String(p.id),
+            images: imgs,
+            imageUrl: derivePrimaryImage({ ...p, images: imgs }),
+            enableEngrave: p.enableEngrave ?? p.enable_engrave ?? false,
+            category: p.category || inferCategory(p.name)
+          };
+        });
       setupChips();
     } else {
       const res = await fetch('api/products.php?action=list');
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       PRODUCTS = (data.products || [])
-        .map(p => ({ ...p, imageUrl: p.imageUrl || (Array.isArray(p.images) ? p.images[0] : ''), category: p.category || inferCategory(p.name) }));
+        .map(p => {
+          const imgs = normalizeImagesArray(p.images);
+          return {
+            ...p,
+            images: imgs,
+            imageUrl: derivePrimaryImage({ ...p, images: imgs }),
+            category: p.category || inferCategory(p.name)
+          };
+        });
       setupChips();
     }
   } catch (e) {
@@ -546,7 +578,15 @@ loadProducts = async function () {
       if (!res2.ok) throw new Error(`HTTP ${res2.status}`);
       const data2 = await res2.json();
       PRODUCTS = (data2.products || [])
-        .map(p => ({ ...p, imageUrl: p.imageUrl || (Array.isArray(p.images) ? p.images[0] : ''), category: p.category || inferCategory(p.name) }));
+        .map(p => {
+          const imgs = normalizeImagesArray(p.images);
+          return {
+            ...p,
+            images: imgs,
+            imageUrl: derivePrimaryImage({ ...p, images: imgs }),
+            category: p.category || inferCategory(p.name)
+          };
+        });
       setupChips();
     } catch (e2) {
       el.innerHTML = `<div class="card" role="alert">Gagal memuat data katalog: ${(e && e.message) || ''} ${(e2 && e2.message) || ''}</div>`;
@@ -733,3 +773,22 @@ function setupHoverSwap(){
     setupEngraveReveal();
   }
 })();
+// Helper untuk normalisasi gambar agar selalu berupa URL string
+function normalizeImagesArray(arr) {
+  if (!Array.isArray(arr)) return [];
+  return arr
+    .map(x => {
+      if (!x) return '';
+      if (typeof x === 'string') return x;
+      if (typeof x === 'object') return x.path || x.url || x.image_url || x.imageUrl || '';
+      return '';
+    })
+    .filter(Boolean);
+}
+
+function derivePrimaryImage(p) {
+  if (p.imageUrl) return p.imageUrl;
+  if (p.image_url) return p.image_url;
+  const imgs = normalizeImagesArray(p.images);
+  return imgs[0] || '';
+}
