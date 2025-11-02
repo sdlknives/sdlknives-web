@@ -37,7 +37,10 @@ p {
   }
   /* Kecilkan logo header agar hemat ruang */
   .brand .logo { width: 40px; height: 40px; }
-  
+  /* Tinggi hero disesuaikan agar tidak terlalu panjang di mobile kecil */
+  .hero-landing { min-height: 420px; }
+  .hero-landing .container { padding: 40px 0; }
+
   .hero-home .headline {
     font-size: 1.8rem;
   }
@@ -57,7 +60,8 @@ p {
   /* Grid konten: satu kolom agar nyaman di layar sempit */
   .grid { grid-template-columns: 1fr; padding-left: 12px; padding-right: 12px; }
   .feature-grid, .advantages-grid, .category-grid { grid-template-columns: 1fr; }
-  
+  .why-grid { grid-template-columns: 1fr; }
+
   .primary-nav a {
     padding: 8px;
     font-size: 0.9rem;
@@ -87,7 +91,7 @@ p {
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
   .trust-row .pill {
     margin: 5px;
   }
@@ -102,11 +106,13 @@ p {
   .hero-home .headline {
     font-size: 2rem;
   }
-  
+  .hero-landing { min-height: 520px; }
+
   .container { padding-left: 24px; padding-right: 24px; }
   /* Grid dua kolom nyaman untuk medium mobile */
   .grid { grid-template-columns: repeat(2, 1fr); padding-left: 14px; padding-right: 14px; }
   .feature-grid, .advantages-grid, .category-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
   .banner .banner-inner { padding: 40px 20px; }
   .toolbar .search input { min-width: 160px; }
   
@@ -149,6 +155,9 @@ p {
     margin: 0 auto;
   }
 }
+
+/* Elemen media skalabel di semua ukuran layar */
+img, video { max-width: 100%; height: auto; }
 
 /* Perbaikan tampilan untuk dark mode */
 @media (prefers-color-scheme: dark) {
