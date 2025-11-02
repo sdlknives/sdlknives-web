@@ -184,7 +184,7 @@ let PRODUCTS = [];
 let PAGE = 1;
 const PAGE_SIZE = 6;
 let SORT = 'asc';
-let SHOW_PREVIOUS = false;
+let SHOW_PREVIOUS = true;
 
 function renderCatalog(list) {
   const el = document.getElementById('catalog');
