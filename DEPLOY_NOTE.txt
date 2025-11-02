@@ -1,0 +1,14 @@
+﻿This folder contains a frontend-only export suitable for GitHub Pages.
+
+Contains:
+- HTML pages
+- assets/, foto/, produk/ static files
+
+Excludes:
+- api/ (server-side PHP)
+- data/ (local JSON samples)
+- scripts/ (deployment helpers)
+
+Notes:
+- Update assets/config.js with your Supabase URL and ANON KEY before pushing.
+- If using a custom domain, include a CNAME file with your domain name.

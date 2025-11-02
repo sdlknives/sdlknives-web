@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob: https://*.supabase.co; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://unpkg.com https://cdnjs.cloudflare.com; font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://unpkg.com; connect-src 'self' https://*.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="color-scheme" content="dark light" />
+    <title>Katalog Produk - SDL KNIVES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <!-- Hapus Font Awesome: tidak ada ikon FA yang digunakan, kita pakai Bootstrap Icons -->
+    <link rel="stylesheet" href="assets/theme.css" />
+    <link rel="stylesheet" href="assets/layout.css" />
+    <link rel="stylesheet" href="assets/sell.css" />
+    <link rel="preload" as="image" href="foto/logo.jpg" fetchpriority="high" />
+    <!-- Kurangi preloading foto besar agar bandwidth fokus ke gambar katalog -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Supabase untuk pembacaan katalog langsung dari DB saat di-host statik -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/config.js"></script>
+    <script src="assets/supabase.client.js"></script>
+  </head>
+  <body class="catalog-katana" data-anim="subtle">
+    <a href="#catalog" class="skip-link">Lewati ke konten</a>
+    <header class="site-header">
+      
+      <div class="container mainbar">
+        <div class="brand"><img class="logo" src="foto/logo.jpg" alt="SDL KNIVES Logo" /><span class="name">SDL KNIVES</span></div>
+        <nav class="primary-nav simple nav">
+          <a href="index.html"><i class="bi bi-house-door"></i> Beranda</a>
+          <a href="catalog.html" class="active"><i class="bi bi-bag"></i> Katalog</a>
+          <a href="kontak.html"><i class="bi bi-chat-dots"></i> Kontak</a>
+        </nav>
+        <div class="actions">
+          <button id="menuToggle" class="menu-toggle" aria-label="Menu"><i class="bi bi-list"></i></button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+ <section class="card banner full-bleed reveal bg-modern-catalog hero-visual" data-aos="fade-up">
+          <div class="hero-bg" aria-hidden="true" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.25)), url('produk/golok4.jpg');"></div>
+          <div class="banner-inner">
+          <h1 class="accent-text accent-animated">Ketajaman Asli, Dibuat Tangan Pandai Besi Pilihan</h1>
+          <p class="muted">Desain modern, performa tajam — pilih kategori favorit.</p>
+          <div class="chips" id="chips">
+            <button class="chip active" data-filter="all"><i class="bi bi-stars"></i> Semua</button>
+            <button class="chip" data-filter="golok">Golok</button>
+            <button class="chip" data-filter="katana">Katana</button>
+            <button class="chip" data-filter="katana">Samurai</button>
+            <button class="chip" data-filter="damascus">Damascus</button>
+            <button class="chip" data-filter="dapur">Dapur</button>
+            <button class="chip" data-filter="edc">EDC</button>
+            <button class="chip" data-filter="alat">Alat & Aksesori</button>
+          </div>
+          <div class="toolbar" id="toolbar">
+            <div class="search"><i class="bi bi-search"></i><input id="searchInput" type="search" placeholder="Cari produk…" aria-label="Cari produk" /></div>
+            <label for="sortSelect" class="link"><i class="bi bi-arrow-up-down"></i> Urutkan</label>
+            <select id="sortSelect" aria-label="Urutkan">
+              <option value="asc">Harga Terendah</option>
+              <option value="desc">Harga Tertinggi</option>
+              <option value="newest">Terbaru</option>
+            </select>
+          </div>
+          <div id="categoryHero" class="category-hero" aria-live="polite"></div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#catalog" id="viewAllProducts"><i class="bi bi-grid-3x3-gap"></i> Lihat Semua Produk</a>
+            <a class="btn outline" target="_blank" href="https://wa.me/6287767896317?text=Halo%20Admin%20SDL%20KNIVES%2C%20saya%20ingin%20konsultasi%20koleksi%20katana."><i class="bi bi-whatsapp"></i> Konsultasi Knives</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="catalog" class="grid reveal" aria-live="polite" role="region" aria-label="Daftar produk" data-aos="fade-up"></section>
+      <div id="pager" class="pager reveal">
+        <button id="prevPage" class="btn" aria-label="Halaman sebelumnya">Sebelumnya</button>
+        <span id="pageInfo" class="muted" aria-live="polite">Halaman 1/1</span>
+        <button id="nextPage" class="btn" aria-label="Halaman berikutnya">Berikutnya</button>
+        <button id="loadMore" class="btn btn-primary" aria-label="Muat lebih">Muat lebih</button>
+      </div>
+    </main>
+
+    <footer class="site-footer reveal">
+      <div class="container footer-cta reveal" data-aos="fade-up">
+        <div class="cta-inner">
+          <i class="bi bi-lightning-charge"></i>
+          <div class="cta-text">Ada pertanyaan ukuran, bahan, atau stok? Kami siap bantu.</div>
+          <div class="actions">
+            <a class="btn" href="index.html"><i class="bi bi-house"></i> Beranda</a>
+            <a class="btn social-btn" aria-label="WhatsApp" href="https://wa.me/6287767896317" target="_blank"><i class="bi bi-whatsapp"></i> Chat Admin</a>
+          </div>
+        </div>
+      </div>
+      <div class="container info-strip shine reveal" data-aos="fade-up" data-aos-delay="80">
+        <i class="bi bi-truck"></i>
+        <div class="text">Pengiriman aman ke seluruh Indonesia. Garansi pengerjaan sesuai deskripsi.</div>
+        <div class="actions">
+          <a class="btn" href="kontak.html"><i class="bi bi-shield-check"></i> Garansi & Pengiriman</a>
+        </div>
+      </div>
+      <div class="container trust-row reveal" data-aos="fade-up" data-aos-delay="120">
+        <span class="pill"><i class="bi bi-hand-thumbs-up"></i> Handmade</span>
+        <span class="pill"><i class="bi bi-gem"></i> Damascus</span>
+        <span class="pill"><i class="bi bi-star"></i> Ukir Custom</span>
+        <span class="pill"><i class="bi bi-shield-lock"></i> Aman</span>
+      </div>
+      <div class="container footer-grid">
+        <div>
+          <img class="footer-logo" src="foto/logo.jpg" alt="SDL KNIVES Logo" />
+          <h4 class="footer-title">SDL KNIVES</h4>
+          <p class="muted">Pisau premium: Golok, Katana, dan Chef Series. Handmade dengan perhatian pada detail.</p>
+          <ul class="footer-contact">
+            <li><i class="bi bi-telephone"></i><a href="https://wa.me/6287767896317" target="_blank">6287767896317</a></li>
+            <li><i class="bi bi-geo-alt"></i><span>Kampung Pandai Besi Salamanjah, RT 002/RW 014, Desa Mekarmaju, Kec. Pasirjambu, Kab. Bandung, Jawa Barat</span></li>
+            <li><i class="bi bi-clock"></i><span>Senin–Sabtu 09:00–17:00</span></li>
+          </ul>
+          <div class="social">
+            <a href="https://wa.me/6287767896317" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i><span class="label">WhatsApp</span></a>
+            <a href="https://www.tiktok.com/@sdlbajastore?_t=ZS-90IOgo96xdA&_r=1" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i><span class="label">TikTok</span></a>
+            <a href="https://www.instagram.com/sdlbajastore/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i><span class="label">Instagram</span></a>
+            <a href="https://m.facebook.com/sdlknives/" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i><span class="label">Facebook</span></a>
+            <a href="https://youtube.com/@sdlbaja_store?si=Ufut1C3KFJ2vGUKP&sub_confirmation=1" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i><span class="label">YouTube</span></a>
+            <a href="https://id.shp.ee/vPcg1mc" target="_blank" aria-label="Shopee"><i class="bi bi-bag"></i><span class="label">Shopee</span></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Belanja</h4>
+          <a href="catalog.html">Katalog</a><br/>
+          <a href="catalog.html#Golok">Golok</a><br/>
+          <a href="catalog.html#katana">Katana</a><br/>
+          <a href="catalog.html#dapur">Dapur</a><br/>
+          <a href="https://id.shp.ee/vPcg1mc" target="_blank">Shopee</a><br/>
+          <a href="https://www.tiktok.com/@sdlbajastore?_t=ZS-90IOgo96xdA&_r=1" target="_blank">TikTok Shop</a>
+        </div>
+        <div>
+          <h4 class="footer-title">Bantuan</h4>
+          <a href="kontak.html">Pengiriman</a><br/>
+          <a href="kontak.html">Garansi</a><br/>
+          <a href="kontak.html">Kontak</a>
+        </div>
+        <div>
+          <h4 class="footer-title">Metode Pembayaran</h4>
+          <div class="pay-row">
+            <span class="pill"><i class="bi bi-credit-card-2-front"></i> Kartu</span>
+            <span class="pill"><i class="bi bi-wallet2"></i> Transfer</span>
+            <span class="pill"><i class="bi bi-cash-coin"></i> COD</span>
+          </div>
+        </div>
+        
+      </div>
+      <div class="container footnote">
+        <span>© 2025 SDL KNIVES</span>
+        <span class="muted">Dibuat dengan ketelitian & rasa seni</span>
+        <span><a href="admin.html" class="muted" aria-label="Masuk Admin">Admin</a></span>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Katalog modern dengan dukungan Supabase dan Quick View -->
+    <script src="assets/catalog.page.js" defer></script>
+    <script src="assets/app.js"></script>
+    <script src="assets/layout.js"></script>
+    <script src="assets/sell.js"></script>
+    <script src="assets/catalog.js"></script>
+    <!-- Modal Quick View Produk -->
+    <div id="productModal" class="modal hidden" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="overlay" data-close="1"></div>
+      <div class="content">
+        <button class="close" aria-label="Tutup" data-close="1"><i class="bi bi-x"></i></button>
+        <div class="gallery">
+          <img class="main" src="" alt="Gambar produk" />
+          <div class="thumbs"></div>
+        </div>
+        <div class="details">
+          <h3 class="name">Nama Produk</h3>
+          <div class="price">Rp0</div>
+          <p class="desc"></p>
+          <div class="actions">
+            <a class="btn btn-primary wa" target="_blank" rel="noopener noreferrer" href="#"><i class="bi bi-whatsapp"></i> Beli via WA</a>
+            <a class="btn outline" data-close="1" href="#"><i class="bi bi-eye"></i> Lihat Detail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="help-fab" href="https://wa.me/6287767896317" target="_blank" aria-label="Bantuan WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+      <span class="label">Butuh bantuan?</span>
+    </a>
+  </body>
+  </html>
