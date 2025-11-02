@@ -484,6 +484,42 @@ loadProducts = async function () {
       </div>
     </article>
   `).join('');
+  // Preferensi sumber data: json | api | supabase | (fallback berurutan)
+  const params = new URLSearchParams(location.search);
+  const srcPref = String((window.CATALOG_SOURCE || params.get('source') || '')).toLowerCase();
+  try {
+    if (srcPref === 'json') {
+      const resJ = await fetch('data/products.json');
+      if (!resJ.ok) throw new Error(`HTTP ${resJ.status}`);
+      const dataJ = await resJ.json();
+      PRODUCTS = (dataJ.products || [])
+        .map(p => ({ ...p, imageUrl: p.imageUrl || (Array.isArray(p.images) ? p.images[0] : ''), category: p.category || inferCategory(p.name) }));
+      setupChips();
+      return;
+    } else if (srcPref === 'api') {
+      const resA = await fetch('api/products.php?action=list');
+      if (!resA.ok) throw new Error(`HTTP ${resA.status}`);
+      const dataA = await resA.json();
+      PRODUCTS = (dataA.products || [])
+        .map(p => ({ ...p, imageUrl: p.imageUrl || (Array.isArray(p.images) ? p.images[0] : ''), category: p.category || inferCategory(p.name) }));
+      setupChips();
+      return;
+    } else if (srcPref === 'supabase' && window.supaListProducts) {
+      const rowsS = await window.supaListProducts();
+      PRODUCTS = (rowsS || [])
+        .map(p => ({
+          ...p,
+          id: String(p.id),
+          imageUrl: p.imageUrl || p.image_url || (Array.isArray(p.images) ? p.images[0] : ''),
+          enableEngrave: p.enableEngrave ?? p.enable_engrave ?? false,
+          category: p.category || inferCategory(p.name)
+        }));
+      setupChips();
+      return;
+    }
+  } catch (ePref) {
+    // Jika preferensi gagal, teruskan ke fallback di bawah
+  }
   try {
     if (window.supaListProducts) {
       const rows = await window.supaListProducts();
