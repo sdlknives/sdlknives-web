@@ -1,6 +1,6 @@
 {
     "products": [
-      
+
       {
         "id": "p3",
         "name": "Golok Sembelih Hewan Qurban HSS",
@@ -9,14 +9,14 @@
             "rating": 4.8,
             "reviews": 18,
             "stock": 10,
-            "imageUrl": "\/produk\/golok1.jpg",
+            "imageUrl": "produk/golok1.jpg",
             "images": [
-                "\/produk\/golok1.jpg",
-                "\/produk\/golok2.jpg",
-                "\/produk\/golok3.jpg",
-                "\/produk\/golok4.jpg"
+                "produk/golok1.jpg",
+                "produk/golok2.jpg",
+                "produk/golok3.jpg",
+                "produk/golok4.jpg"
             ],
-            "videoUrl": "\/produk\/golok5.mp4",
+            "videoUrl": "produk/golok5.mp4",
         "visible": true,
         "accessories": ["a1", "a2"]
       },
@@ -25,14 +25,14 @@
         "name": "Kampak Survival Serbaguna",
         "description": "Cacah tulang, tebas kayu bambu. Material bilah baja per sepuh. Handle full tang kayu sonokeling, sarung kulit. PB 8cm, TB 6mm, LB 5cm, panjang handle 25cm.",
         "price": 300000,
-        "imageUrl": "/produk/kpk.jpg",
+        "imageUrl": "produk/kpk.jpg",
         "images": [
-          "/produk/kpk.jpg",
-          "/produk/kpk (2).jpg",
-          "/produk/kpk (3).jpg",
-          "/produk/kpk (4).jpg",
-          "/produk/kpk (5).jpg",
-          "/produk/kpk (6).jpg"
+          "produk/kpk.jpg",
+          "produk/kpk (2).jpg",
+          "produk/kpk (3).jpg",
+          "produk/kpk (4).jpg",
+          "produk/kpk (5).jpg",
+          "produk/kpk (6).jpg"
         ],
         "visible": true
       },
@@ -41,13 +41,13 @@
         "name": "Pisau Skinner Sisit Kulit",
         "description": "Material bilah baja per sepuh. Handle kayu sonokeling cor duralium. Sarung kulit sapi asli. PB 14cm, TB 3mm, LB 4cm.",
         "price": 175000,
-        "imageUrl": "/produk/pisau.jpg",
+        "imageUrl": "produk/pisau.jpg",
         "images": [
-          "/produk/pisau.jpg",
-          "/produk/pisau (2).jpg",
-          "/produk/pisau (3).jpg",
-          "/produk/pisau (4).jpg",
-          "/produk/pisau (5).jpg"
+          "produk/pisau.jpg",
+          "produk/pisau (2).jpg",
+          "produk/pisau (3).jpg",
+          "produk/pisau (4).jpg",
+          "produk/pisau (5).jpg"
         ],
         "visible": true
       },
@@ -56,14 +56,14 @@
         "name": "Golok Tebas Berkebun Natural",
         "description": "Material bilah baja per sepuh. Handle full tang jepit kayu sonokeling dengan pin. Sarung kayu sonokeling. PB 30cm, TB 5mm, LB 4cm.",
         "price": 250000,
-        "imageUrl": "/produk/tebas.jpg",
+        "imageUrl": "produk/tebas.jpg",
         "images": [
-          "/produk/tebas.jpg",
-          "/produk/tebas (2).jpg",
-          "/produk/tebas (3).jpg",
-          "/produk/tebas (4).jpg"
+          "produk/tebas.jpg",
+          "produk/tebas (2).jpg",
+          "produk/tebas (3).jpg",
+          "produk/tebas (4).jpg"
         ],
-        "videoUrl": "/produk/tebas.mp4",
+        "videoUrl": "produk/tebas.mp4",
         "visible": true
       },
       {
@@ -71,14 +71,14 @@
         "name": "Golok Tebas Berkebun Kopak Rawing",
         "description": "Golok tebas berkebun kopak rawing. Material bilah baja per sepuh; handle full tang jepit kayu sonokeling; sarung kulit sapi asli. PB 30cm, TB 5mm, LB 3,8cm.",
         "price": 270000,
-        "imageUrl": "/produk/kebun.jpg",
+        "imageUrl": "produk/kebun.jpg",
         "images": [
-          "/produk/kebun.jpg",
-          "/produk/kebun (2).jpg",
-          "/produk/kebun (3).jpg",
-          "/produk/kebun (4).jpg"
+          "produk/kebun.jpg",
+          "produk/kebun (2).jpg",
+          "produk/kebun (3).jpg",
+          "produk/kebun (4).jpg"
         ],
-        "videoUrl": "/produk/kebun.mp4",
+        "videoUrl": "produk/kebun.mp4",
         "visible": true
       },
       {
@@ -86,14 +86,14 @@
         "name": "Pedang Krabi Serbaguna Natural",
         "description": "Bilah baja per sepuh; handle kayu sonokeling dipin duralium; sarung kayu sonokeling natural. PB 36–40cm, TB 5mm, LB 4cm.",
         "price": 250000,
-        "imageUrl": "/produk/krabi.jpg",
+        "imageUrl": "produk/krabi.jpg",
         "images": [
-          "/produk/krabi.jpg",
-          "/produk/krabi (2).jpg",
-          "/produk/krabi (3).jpg",
-          "/produk/krabi (4).jpg"
+          "produk/krabi.jpg",
+          "produk/krabi (2).jpg",
+          "produk/krabi (3).jpg",
+          "produk/krabi (4).jpg"
         ],
-        "videoUrl": "/produk/krabi.mp4",
+        "videoUrl": "produk/krabi.mp4",
         "visible": true
       },
       {
@@ -101,14 +101,14 @@
         "name": "Pisau Fillet Serbaguna",
         "description": "Material bilah baja per sepuh; handle full tang kayu johar; sarung kayu johar. PB 18cm, TB 3mm, LB 3cm.",
         "price": 165000,
-        "imageUrl": "/produk/fillet.jpg",
+        "imageUrl": "produk/fillet.jpg",
         "images": [
-          "/produk/fillet.jpg",
-          "/produk/fillet (2).jpg",
-          "/produk/fillet (3).jpg",
-          "/produk/fillet (4).jpg"
+          "produk/fillet.jpg",
+          "produk/fillet (2).jpg",
+          "produk/fillet (3).jpg",
+          "produk/fillet (4).jpg"
         ],
-        "videoUrl": "/produk/fillet.mp4",
+        "videoUrl": "produk/fillet.mp4",
         "visible": true
       },
       {
@@ -116,13 +116,13 @@
         "name": "Kukri-Kukri 3 Kukri Knife Survival",
         "description": "Material bilah baja per sepuh; handle kayu sonokeling full tang dengan duralium; sarung kulit kombinasi. PB 23cm, TB 5mm, LB 4cm.",
         "price": 185000,
-        "imageUrl": "/produk/kukri.jpg",
+        "imageUrl": "produk/kukri.jpg",
         "images": [
-          "/produk/kukri.jpg",
-          "/produk/kukri (2).jpg",
-          "/produk/kukri (3).jpg"
+          "produk/kukri.jpg",
+          "produk/kukri (2).jpg",
+          "produk/kukri (3).jpg"
         ],
-        "videoUrl": "/produk/kukri.mp4",
+        "videoUrl": "produk/kukri.mp4",
         "visible": true
       },
       {
@@ -130,13 +130,13 @@
         "name": "Paket Kukri Knife",
         "description": "Paket kukri knife. Material bilah baja per sepuh; handle kayu sonokeling full tang dengan duralium; sarung kulit kombinasi. Ukuran utama: PB 23cm, TB 5mm, LB 3,6cm. Ukuran kecil: PB 10cm, TB 2mm, LB 2cm.",
         "price": 250000,
-        "imageUrl": "/produk/paketkukri.jpg",
+        "imageUrl": "produk/paketkukri.jpg",
         "images": [
-          "/produk/paketkukri.jpg",
-          "/produk/paketkukri (2).jpg",
-          "/produk/paketkukri (3).jpg",
-          "/produk/paketkukri (4).jpg",
-          "/produk/paketkukri (5).jpg"
+          "produk/paketkukri.jpg",
+          "produk/paketkukri (2).jpg",
+          "produk/paketkukri (3).jpg",
+          "produk/paketkukri (4).jpg",
+          "produk/paketkukri (5).jpg"
         ],
         "visible": true
       },
@@ -145,15 +145,15 @@
         "name": "Mandau-Mandau5 Golok Tebas Berkebun (Semi Mandau)",
         "description": "Material baja per tempa sepuh; handle full tang kayu sonokeling; sarung kulit sapi. PB 30cm, TB 5mm, LB 4cm.",
         "price": 260000,
-        "imageUrl": "/produk/mandau.jpg",
+        "imageUrl": "produk/mandau.jpg",
         "images": [
-          "/produk/mandau.jpg",
-          "/produk/mandau (2).jpg",
-          "/produk/mandau (3).jpg",
-          "/produk/mandau (4).jpg",
-          "/produk/mandau (5).jpg"
+          "produk/mandau.jpg",
+          "produk/mandau (2).jpg",
+          "produk/mandau (3).jpg",
+          "produk/mandau (4).jpg",
+          "produk/mandau (5).jpg"
         ],
-        "videoUrl": "/produk/mandau.mp4",
+        "videoUrl": "produk/mandau.mp4",
         "visible": true
       },
       {
@@ -161,13 +161,13 @@
         "name": "Caro-Carok4 Rangrit Carok",
         "description": "Material bilah baja per sepuh; handle full tang jepit kayu sonokeling dipin kuningan; sarung kulit sapi. PB 40cm, TB 4mm, LB 3cm.",
         "price": 280000,
-        "imageUrl": "/produk/carok.jpg",
+        "imageUrl": "produk/carok.jpg",
         "images": [
-          "/produk/carok.jpg",
-          "/produk/carok (1).jpg",
-          "/produk/carok (2).jpg",
-          "/produk/carok (3).jpg",
-          "/produk/carok (4).jpg"
+          "produk/carok.jpg",
+          "produk/carok (1).jpg",
+          "produk/carok (2).jpg",
+          "produk/carok (3).jpg",
+          "produk/carok (4).jpg"
         ],
         "visible": true
       },
@@ -176,12 +176,12 @@
         "name": "Chopper-Chopper2 Chopper Serbaguna",
         "description": "Material bilah baja per sepuh; handle full tang jepit kayu sonokeling dipin; sarung kulit. PB 25cm, TB 6mm, LB 4cm.",
         "price": 450000,
-        "imageUrl": "/produk/chopper.jpg",
+        "imageUrl": "produk/chopper.jpg",
         "images": [
-          "/produk/chopper.jpg",
-          "/produk/chopper (2).jpg"
+          "produk/chopper.jpg",
+          "produk/chopper (2).jpg"
         ],
-        "videoUrl": "/produk/chopper.mp4",
+        "videoUrl": "produk/chopper.mp4",
         "visible": true
       },
       {
@@ -189,13 +189,13 @@
         "name": "Krambit-Krambit 5 Krambit Cula Resin",
         "description": "Material bilah strip steel; handle full tang resin; sarung kulit kombinasi. PB 15cm, panjang total 20cm, TB 3mm, LB 3cm.",
         "price": 150000,
-        "imageUrl": "/produk/krambit.jpg",
+        "imageUrl": "produk/krambit.jpg",
         "images": [
-          "/produk/krambit.jpg",
-          "/produk/krambit (2).jpg",
-          "/produk/krambit (3).jpg",
-          "/produk/krambit (4).jpg",
-          "/produk/krambit (5).jpg"
+          "produk/krambit.jpg",
+          "produk/krambit (2).jpg",
+          "produk/krambit (3).jpg",
+          "produk/krambit (4).jpg",
+          "produk/krambit (5).jpg"
         ],
         "visible": true
       },
@@ -204,15 +204,15 @@
         "name": "Sembelih-Sembelih 7 Golok Sembelih HSS",
         "description": "High Speed Steel (HSS); handle kayu sonokeling full tang dural; sarung kulit. PB 30cm, TB 3mm, LB 3cm.",
         "price": 230000,
-        "imageUrl": "/produk/sembelih.jpg",
+        "imageUrl": "produk/sembelih.jpg",
         "images": [
-          "/produk/sembelih.jpg",
-          "/produk/sembelih (2).jpg",
-          "/produk/sembelih (3).jpg",
-          "/produk/sembelih (4).jpg",
-          "/produk/sembelih (5).jpg",
-          "/produk/sembelih (6).jpg",
-          "/produk/sembelih (7).jpg"
+          "produk/sembelih.jpg",
+          "produk/sembelih (2).jpg",
+          "produk/sembelih (3).jpg",
+          "produk/sembelih (4).jpg",
+          "produk/sembelih (5).jpg",
+          "produk/sembelih (6).jpg",
+          "produk/sembelih (7).jpg"
         ],
         "visible": true
       },
@@ -221,15 +221,15 @@
         "name": "Ghurka-Ghurka5 Kukri Ghurka Anak Serbaguna Camping",
         "description": "Material spring steel; handle full tang jepit kayu sonokeling; sarung kulit. Utama: PB 31cm, TB 5mm, LB 4cm. Anak: PB 10cm, TB 3mm, LB 2,5cm.",
         "price": 450000,
-        "imageUrl": "/produk/ghurka.jpg",
+        "imageUrl": "produk/ghurka.jpg",
         "images": [
-          "/produk/ghurka.jpg",
-          "/produk/ghurka (2).jpg",
-          "/produk/ghurka (3).jpg",
-          "/produk/ghurka (4).jpg",
-          "/produk/ghurka (5).jpg"
+          "produk/ghurka.jpg",
+          "produk/ghurka (2).jpg",
+          "produk/ghurka (3).jpg",
+          "produk/ghurka (4).jpg",
+          "produk/ghurka (5).jpg"
         ],
-        "videoUrl": "/produk/ghurka.mp4",
+        "videoUrl": "produk/ghurka.mp4",
         "visible": true
       },
       {
@@ -237,14 +237,14 @@
         "name": "Jumbo-Jumbo4 Paket Sembelih Jumbo",
         "description": "Material bilah baja spring steel; handle full tang kayu sonokeling; sarung kulit. Utama: PB 40cm, TB 4mm, LB 4cm. Anak: PB 12cm, TB 3mm, LB 2,5cm.",
         "price": 450000,
-        "imageUrl": "/produk/jumbo.jpg",
+        "imageUrl": "produk/jumbo.jpg",
         "images": [
-          "/produk/jumbo.jpg",
-          "/produk/jumbo (2).jpg",
-          "/produk/jumbo (3).jpg",
-          "/produk/jumbo (4).jpg"
+          "produk/jumbo.jpg",
+          "produk/jumbo (2).jpg",
+          "produk/jumbo (3).jpg",
+          "produk/jumbo (4).jpg"
         ],
-        "videoUrl": "/produk/VID-20251005-WA0011.mp4",
+        "videoUrl": "produk/VID-20251005-WA0011.mp4",
         "visible": true
       },
       {
@@ -252,13 +252,13 @@
         "name": "Kopak-Kopak3 Golok Pamoroan Kopak Rawing Jumbo",
         "description": "Bilah baja per sepuh; handle full tang jepit kayu sonokeling dipin; sarung kulit. PB 40cm, TB 5mm, LB 4cm.",
         "price": 350000,
-        "imageUrl": "/produk/kopak.jpg",
+        "imageUrl": "produk/kopak.jpg",
         "images": [
-          "/produk/kopak.jpg",
-          "/produk/kopak (2).jpg",
-          "/produk/kopak (3).jpg"
+          "produk/kopak.jpg",
+          "produk/kopak (2).jpg",
+          "produk/kopak (3).jpg"
         ],
-        "videoUrl": "/produk/kopak.mp4",
+        "videoUrl": "produk/kopak.mp4",
         "visible": true
       },
       {
@@ -266,13 +266,13 @@
         "name": "Tanto-Tanto5 Katana Tanto Serbaguna Natural",
         "description": "Material baja per sepuh; handle kayu sonokeling aksen kuningan dengan pin; sarung kayu sonokeling. PB 30cm, panjang total 45cm, TB 4mm, LB 3cm.",
         "price": 250000,
-        "imageUrl": "/produk/tanto.jpg",
+        "imageUrl": "produk/tanto.jpg",
         "images": [
-          "/produk/tanto.jpg",
-          "/produk/tanto (2).jpg",
-          "/produk/tanto (3).jpg",
-          "/produk/tanto (4).jpg",
-          "/produk/tanto (5).jpg"
+          "produk/tanto.jpg",
+          "produk/tanto (2).jpg",
+          "produk/tanto (3).jpg",
+          "produk/tanto (4).jpg",
+          "produk/tanto (5).jpg"
         ],
         "visible": true
       },
@@ -281,7 +281,7 @@
         "name": "Sarung Kayu Johar",
         "description": "Sarung kayu johar untuk golok/pisau.",
         "price": 75000,
-        "imageUrl": "/foto/logo.jpg",
+        "imageUrl": "foto/logo.jpg",
         "visible": true
       },
       {
@@ -289,7 +289,7 @@
         "name": "Batu Asah Whetstone 1000/6000",
         "description": "Batu asah kombinasi 1000/6000 untuk perawatan ketajaman.",
         "price": 120000,
-        "imageUrl": "/foto/logo.jpg",
+        "imageUrl": "foto/logo.jpg",
         "visible": true
       },
 
@@ -298,11 +298,11 @@
         "name": "Bowi-Bowi3 Pisau Bowi Jumbo",
         "description": "Bilah baja per sepuh; handle full tang kayu sonokeling dengan pin; sarung kulit sapi. Utama: PB 30cm, TB 5mm, LB 3,8cm. Anak: PB 12cm, TB 3mm, LB 3cm.",
         "price": 350000,
-        "imageUrl": "/produk/bowi.jpg",
+        "imageUrl": "produk/bowi.jpg",
         "images": [
-          "/produk/bowi.jpg",
-          "/produk/bowi (2).jpg",
-          "/produk/bowi (3).jpg"
+          "produk/bowi.jpg",
+          "produk/bowi (2).jpg",
+          "produk/bowi (3).jpg"
         ],
         "visible": true
       }

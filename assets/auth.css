@@ -1,0 +1,151 @@
+/* Login form enhancements: error feedback, password toggle, minimal overrides */
+
+.form-error {
+  color: #ef4444;
+  font-size: .92rem;
+  margin: 6px 0 0;
+  min-height: 1.2em;
+}
+
+.auth-fields input.invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, .12);
+}
+
+.password-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.password-group input { flex: 1; }
+
+.icon-btn {
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.icon-btn:hover { background: var(--hover-bg); color: var(--text); }
+
+.auth-note.small { text-align: center; color: var(--text-muted); font-size: .95rem; }
+.auth-links { text-align: center; margin-top: 10px; color: var(--text-muted); }
+.auth-links .sep { margin: 0 8px; }
+.link-btn { background: transparent; border: none; color: var(--primary); cursor: pointer; padding: 6px 8px; border-radius: 8px; }
+.link-btn:hover { background: rgba(209, 57, 57, .08); }
+
+/* ===== Admin page modern background & glassmorphism ===== */
+.admin-page {
+  --primary: #d13939;
+  --primary-700: #b22f2f;
+  --accent: #ffb703;
+  --bg: #0b0f14;
+  --text: #e9edf3;
+  --text-muted: #b8c0cc;
+  --card-bg: rgba(255,255,255,0.06);
+  --hover-bg: rgba(255,255,255,0.12);
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(209,57,57,0.18), transparent 60%),
+    radial-gradient(900px 500px at 90% 20%, rgba(255,183,3,0.12), transparent 60%),
+    linear-gradient(180deg, rgba(11,15,20,0.96), rgba(11,15,20,0.92)),
+    url('foto/bg1 (1).jpg') center/cover fixed no-repeat;
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.admin-page .auth-card.simple {
+  backdrop-filter: blur(12px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+}
+.admin-page .auth-head h2 { color: var(--text); letter-spacing: .2px; }
+.admin-page .auth-logo { width: 68px; height: 68px; border-radius: 50%; box-shadow: 0 6px 16px rgba(0,0,0,0.35); animation: float 6s ease-in-out infinite; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Input prefix icons */
+.input-ico { position: relative; }
+.input-ico > i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.input-ico > input { padding-left: 42px; }
+
+/* Tuning field & buttons for admin page */
+.admin-page .auth-fields label { color: var(--text); font-weight: 600; margin-top: 8px; }
+.admin-page .auth-fields input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 12px;
+  background: var(--card-bg);
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.admin-page .auth-fields input::placeholder { color: #9aa3ae; }
+.admin-page .auth-fields input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(209, 57, 57, .18); background: rgba(255,255,255,0.10); }
+
+.admin-page .icon-btn {
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 12px;
+}
+.admin-page .icon-btn:hover { background: rgba(255,255,255,0.14); color: var(--text); border-color: rgba(255,255,255,0.32); }
+
+.admin-page .link-btn { color: var(--accent); padding: 6px 10px; border-radius: 10px; }
+.admin-page .link-btn:hover { background: rgba(255, 183, 3, .12); }
+
+.admin-page .btn.btn-primary { background: var(--primary); color: #fff; border: none; }
+.admin-page .btn.btn-primary:hover { background: var(--primary-700); }
+
+/* Uploaded images table (modern) */
+.admin-page .uploaded-list-section { margin-top: 12px; }
+.admin-page .uploaded-list-section .section-head { display:flex; align-items:center; gap:10px; margin: 6px 0 10px; }
+.admin-page .uploaded-list-section .section-head h3 { margin:0; font-size: 1.1rem; display:flex; align-items:center; gap:8px; }
+.admin-page .uploaded-list-section .section-head .muted { color: var(--text-muted); font-size: .95rem; }
+.admin-page .uploaded-list-section .table-wrap { overflow-x: auto; border: 1px solid rgba(255,255,255,0.16); border-radius: 12px; background: rgba(255,255,255,0.06); }
+.admin-page table.upload-table { width: 100%; border-collapse: collapse; }
+.admin-page table.upload-table thead th { text-align:left; font-weight:600; color: var(--text); padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.16); }
+.admin-page table.upload-table tbody td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.10); vertical-align: middle; }
+.admin-page table.upload-table tbody tr:hover { background: rgba(255,255,255,0.08); }
+.admin-page table.upload-table img.thumb { width: 64px; height: 64px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.25); }
+
+/* Small action buttons inside table */
+.admin-page .btn.small { padding: 6px 8px; font-size: .92rem; border: 1px solid rgba(255,255,255,0.22); border-radius: 10px; background: rgba(255,255,255,0.08); color: var(--text); cursor: pointer; }
+.admin-page .btn.small:hover { background: rgba(255,255,255,0.14); }
+.admin-page .btn.small.danger { border-color: rgba(239,68,68,.35); color: #fff; background: rgba(239,68,68,.35); }
+.admin-page .btn.small.danger:hover { background: rgba(239,68,68,.50); }
+.admin-page td.actions { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+
+/* Post-save notice bar */
+.save-notice { margin-top: 16px; display: none; }
+.save-notice-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(59, 243, 134, 0.1);
+  border: 1px solid rgba(59, 243, 134, 0.35);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  backdrop-filter: blur(6px);
+}
+.save-notice .text { display:flex; align-items:center; gap:8px; color:#2c7a3f; }
+.save-notice .text i { color:#2c7a3f; }
+.save-notice .actions { display:flex; align-items:center; gap:8px; }
+.save-notice .btn.icon { padding: 8px; }
